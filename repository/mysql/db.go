@@ -1,14 +1,19 @@
 package mysql
 
-import "mymodule/entity"
+import (
+	"database/sql"
+	"log"
+)
 
-type DB struct {
+type MysqlDB struct {
+	db *sql.DB
 }
 
-func (d DB) IsPhoneNumberUnique(phoneNumber string) (bool, error) {
-
-}
-
-func (d DB) RegisterUser(user entity.User) (entity.User, error) {
-
+func New() *MysqlDB {
+	dsn := "root:gameappRoo7t0lk2o20(127.0.0.1:3308)/gameapp_db"
+	db, oErr := sql.Open("mysql", dsn)
+	if oErr != nil {
+		log.Fatalf("failed to connect database: %v\n", oErr)
+	}
+	return &MysqlDB{db}
 }

@@ -1,17 +1,19 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
-	"regexp"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
-	sl := [4]int{1, 2, 3, 4}
-	nl := sl[:]
-	nl[0] = 10
-	fmt.Println(sl, nl)
-	str := "091272752362"
-	match, _ := regexp.MatchString(`^0\d{10}$`, str)
-	fmt.Println(match)
-	fmt.Printf("%T\n", str[2:])
+	dsn := "root:gameappRoo7t0lk2o20(127.0.0.1:3308)/gameapp_db"
+	connetion, oErr := sql.Open("mysql", dsn)
+	if oErr != nil {
+		fmt.Println("failed to open db", oErr)
+
+		return
+	}
+	fmt.Println("connected to db", connetion.Ping())
+	
 }
