@@ -2,6 +2,8 @@ package mysql
 
 import (
 	"database/sql"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"log"
 )
 
@@ -15,5 +17,6 @@ func New() *MysqlDB {
 	if oErr != nil {
 		log.Fatalf("failed to connect database: %v\n", oErr)
 	}
+	fmt.Println("connected to database")
 	return &MysqlDB{db}
 }
