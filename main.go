@@ -12,19 +12,18 @@ import (
 )
 
 func main() {
-
-	http.HandleFunc("/users/register", UserRegister)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/users/register", UserRegisterHandler)
+	server := http.Server{Addr: ":8080", Handler: mux}
+	//http.HandleFunc("/users/register", UserRegisterHandler)
 	fmt.Println("Server is running on port 8080")
-	if lErr := http.ListenAndServe(":8080", nil); lErr != nil {
-		log.Fatal(lErr)
-	}
-
+	log.Fatal(server.ListenAndServe())
 }
 
-func UserRegister(w http.ResponseWriter, r *http.Request) {
+func UserRegisterHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		w.Write([]byte(`{"message":"method not allowed","status":false}`))
 		w.WriteHeader(http.StatusMethodNotAllowed)
+		w.Write([]byte(`{"message":"method not allowed","status":false}`))
 
 		return
 	}
