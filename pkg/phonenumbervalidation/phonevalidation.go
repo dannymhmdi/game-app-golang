@@ -5,17 +5,25 @@ import (
 	"regexp"
 )
 
-func IsValid(phonenumber string) (bool, error) {
+func IsValid(phonenumber string) error {
 	regex := `^0\d{10}$`
-	match, mErr := regexp.MatchString(regex, phonenumber)
-	if mErr != nil {
-		return false, fmt.Errorf("failed to check phonenumber regex:%v\n", mErr.Error())
+	res, cErr := regexp.Compile(regex)
+	if cErr != nil {
+		return cErr
 	}
-
-	if !match {
-		return false, fmt.Errorf("phonenumber is not valid")
+	if !res.MatchString(phonenumber) {
+		return fmt.Errorf("phonenumber: %s is not validssssss", phonenumber)
 	}
-
-	return true, nil
+	return nil
+	//match, mErr := regexp.MatchString(regex, phonenumber)
+	//if mErr != nil {
+	//	return fmt.Errorf("failed to check phonenumber regex:%v\n", mErr.Error())
+	//}
+	//
+	//if !match {
+	//	return fmt.Errorf("phonenumber is not valid")
+	//}
+	//
+	//return nil
 
 }

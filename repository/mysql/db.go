@@ -12,11 +12,12 @@ type MysqlDB struct {
 }
 
 func New() *MysqlDB {
-	dsn := "root:gameappRoo7t0lk2o20(127.0.0.1:3308)/gameapp_db"
-	db, oErr := sql.Open("mysql", dsn)
+	//dsn := "gameapp:gameappt0lk2o20(127.0.0.1:3308)/gameapp_db"
+	db, oErr := sql.Open("mysql", "gameapp:gameappt0lk2o20@tcp(localhost:3308)/gameapp_db")
 	if oErr != nil {
 		log.Fatalf("failed to connect database: %v\n", oErr)
 	}
 	fmt.Println("connected to database")
 	return &MysqlDB{db}
+
 }
