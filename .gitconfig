@@ -1,0 +1,1 @@
+[includeIf "gitdir:~/work/"] path = ~/.gitconfig-Danielgitacount
