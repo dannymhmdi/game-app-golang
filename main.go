@@ -6,6 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"io"
 	"log"
+	"mymodule/pkg/textcolor"
 	"mymodule/repository/mysql"
 	"mymodule/service/registerservice"
 	"net/http"
@@ -16,8 +17,8 @@ func main() {
 	mux.HandleFunc("/users/register", UserRegisterHandler)
 	mux.HandleFunc("/users/login", UserLoginHandler)
 	server := http.Server{Addr: ":8080", Handler: mux}
-	fmt.Println("Server is running on port 8080")
-	log.Fatal(server.ListenAndServe())
+	fmt.Println(textcolor.Green + "Server is running on port 8080" + textcolor.Reset)
+	log.Fatal(server.ListenAndServe().Error())
 }
 
 func UserRegisterHandler(w http.ResponseWriter, r *http.Request) {
@@ -31,7 +32,7 @@ func UserRegisterHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		_, wErr := w.Write([]byte(`{"message":"failed to read body","status":false}`))
 		if wErr != nil {
-			fmt.Println("failed to write response:", wErr)
+			fmt.Println(textcolor.Red + fmt.Sprintf("failed to write response:%v\n", wErr) + textcolor.Reset)
 			http.Error(w, wErr.Error(), http.StatusInternalServerError)
 			return
 		}
@@ -47,7 +48,7 @@ func UserRegisterHandler(w http.ResponseWriter, r *http.Request) {
 	if uErr != nil {
 		_, wErr := w.Write([]byte(`{"message":"failed to unmarshal body","status":false}`))
 		if wErr != nil {
-			fmt.Println("failed to write response:", wErr)
+			fmt.Println(textcolor.Red + fmt.Sprintf("failed to write response:%v\n", wErr) + textcolor.Reset)
 			http.Error(w, wErr.Error(), http.StatusInternalServerError)
 			return
 		}
@@ -82,7 +83,7 @@ func UserLoginHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		_, wErr := w.Write([]byte(`{"message":"method not allowed","status":false}`))
 		if wErr != nil {
-			fmt.Println("failed to write response:", wErr)
+			fmt.Println(textcolor.Red + fmt.Sprintf("failed to write response:%v\n", wErr) + textcolor.Reset)
 
 			return
 		}
@@ -111,7 +112,7 @@ func UserLoginHandler(w http.ResponseWriter, r *http.Request) {
 	if lErr != nil {
 		_, wErr := w.Write([]byte(fmt.Sprintf(`{"message":%v,"status":false}`, lErr)))
 		if wErr != nil {
-			fmt.Println("failed to write response:", wErr)
+			fmt.Println(textcolor.Red + fmt.Sprintf("failed to write response:%v\n", wErr) + textcolor.Reset)
 
 			return
 		}
@@ -128,7 +129,7 @@ func UserLoginHandler(w http.ResponseWriter, r *http.Request) {
 
 	_, wErr := w.Write(jsonResponse)
 	if wErr != nil {
-		fmt.Println("failed to write response:", wErr)
+		fmt.Println(textcolor.Red + fmt.Sprintf("failed to write response:%v\n", wErr) + textcolor.Reset)
 
 		return
 	}

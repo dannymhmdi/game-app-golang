@@ -78,7 +78,6 @@ func (s Service) Login(req LoginRequest) (LoginResponse, error) {
 	if gErr != nil {
 		return LoginResponse{}, gErr
 	}
-	fmt.Println("userff", user)
 
 	if cErr := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); cErr != nil {
 		return LoginResponse{}, fmt.Errorf("password is incorrect :%v\n", cErr)
