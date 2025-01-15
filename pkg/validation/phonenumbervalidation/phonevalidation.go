@@ -12,7 +12,7 @@ func IsValid(phonenumber string) error {
 		return cErr
 	}
 	if !res.MatchString(phonenumber) {
-		return fmt.Errorf("phonenumber: %s is not validssssss", phonenumber)
+		return fmt.Errorf("phonenumber: %s is not valid", phonenumber)
 	}
 	return nil
 	//match, mErr := regexp.MatchString(regex, phonenumber)

@@ -15,7 +15,6 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/users/register", UserRegisterHandler)
 	server := http.Server{Addr: ":8080", Handler: mux}
-	//http.HandleFunc("/users/register", UserRegisterHandler)
 	fmt.Println("Server is running on port 8080")
 	log.Fatal(server.ListenAndServe())
 }

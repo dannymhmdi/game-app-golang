@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"golang.org/x/crypto/bcrypt"
 	"mymodule/entity"
 )
 
@@ -12,7 +13,7 @@ func (d *MysqlDB) IsPhoneNumberUnique(phoneNumber string) (bool, error) {
 	user := entity.User{}
 	var createdAt []uint8
 	row := d.db.QueryRow(`select * from users where phone_number=?`, phoneNumber)
-	err := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &createdAt)
+	err := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &user.Password, &createdAt)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return true, nil
@@ -23,7 +24,11 @@ func (d *MysqlDB) IsPhoneNumberUnique(phoneNumber string) (bool, error) {
 }
 
 func (d *MysqlDB) RegisterUser(user entity.User) (entity.User, error) {
-	res, dErr := d.db.Exec(`insert into users(name,phone_number)values(?,?)`, user.Name, user.PhoneNumber)
+	hashedPassword, gErr := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+	if gErr != nil {
+		return entity.User{}, fmt.Errorf("failed to hash password: %v\n", gErr)
+	}
+	res, dErr := d.db.Exec(`insert into users(name,phone_number,password)values(?,?,?)`, user.Name, user.PhoneNumber, hashedPassword)
 	if dErr != nil {
 		return entity.User{}, fmt.Errorf("failed to insert user to db :%w\n", dErr)
 	}
@@ -36,3 +41,7 @@ func (d *MysqlDB) RegisterUser(user entity.User) (entity.User, error) {
 
 	return user, nil
 }
+
+//func (d *MysqlDB) IsPassMatch(password string) (bool, error) {
+//	bcrypt.GenerateFromPassword([]byte(password)
+//}
