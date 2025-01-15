@@ -14,6 +14,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/users/register", UserRegisterHandler)
+	mux.HandleFunc("/users/login", UserLoginHandler)
 	server := http.Server{Addr: ":8080", Handler: mux}
 	fmt.Println("Server is running on port 8080")
 	log.Fatal(server.ListenAndServe())
@@ -74,6 +75,64 @@ func UserRegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Write(jsonData)
+}
+
+func UserLoginHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		w.WriteHeader(http.StatusMethodNotAllowed)
+		_, wErr := w.Write([]byte(`{"message":"method not allowed","status":false}`))
+		if wErr != nil {
+			fmt.Println("failed to write response:", wErr)
+
+			return
+		}
+	}
+
+	body, rErr := io.ReadAll(r.Body)
+	if rErr != nil {
+		fmt.Println("failed to read body:", rErr)
+
+		return
+	}
+
+	bd := registerservice.LoginRequest{}
+
+	jErr := json.Unmarshal(body, &bd)
+	if jErr != nil {
+		fmt.Println("failed to unmarshal body:", jErr)
+
+		return
+	}
+
+	loginRepo := mysql.New()
+	loginsvc := registerservice.New(loginRepo)
+
+	Respone, lErr := loginsvc.Login(bd)
+	if lErr != nil {
+		_, wErr := w.Write([]byte(fmt.Sprintf(`{"message":%v,"status":false}`, lErr)))
+		if wErr != nil {
+			fmt.Println("failed to write response:", wErr)
+
+			return
+		}
+
+		return
+	}
+
+	jsonResponse, jErr := json.Marshal(Respone)
+	if jErr != nil {
+		fmt.Println("failed to marshal response:", jErr)
+
+		return
+	}
+
+	_, wErr := w.Write(jsonResponse)
+	if wErr != nil {
+		fmt.Println("failed to write response:", wErr)
+
+		return
+	}
+
 }
 
 //curl -X POST -H "Content-Type: application/json" -d '{"Name":"Hosein", "PhoneNumber":"09122598501"}' http://localhost:8080/users/register

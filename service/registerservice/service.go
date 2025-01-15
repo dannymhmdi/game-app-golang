@@ -2,6 +2,7 @@ package registerservice
 
 import (
 	"fmt"
+	"golang.org/x/crypto/bcrypt"
 	"mymodule/entity"
 	"mymodule/pkg/validation/passwordvalidation"
 	"mymodule/pkg/validation/phonenumbervalidation"
@@ -9,7 +10,7 @@ import (
 
 type RegisterRepositoryService interface {
 	IsPhoneNumberUnique(phoneNumber string) (bool, error)
-	//IsPassMatch(password string) (bool, error)
+	GetUserByPhoneNumber(phoneNumber string) (entity.User, error)
 	RegisterUser(user entity.User) (entity.User, error)
 }
 
@@ -33,9 +34,16 @@ type RegisterResponse struct {
 	User entity.User
 }
 
-//type LoginRequest struct {
-//	PhoneNumber string
-//}
+type LoginRequest struct {
+	PhoneNumber string
+	Password    string
+}
+
+type LoginResponse struct {
+	Message string
+	Status  bool
+	user    entity.User
+}
 
 func (s Service) RegisterUser(req RegisterRequest) (RegisterResponse, error) {
 	//TODO - hashing password
@@ -63,4 +71,18 @@ func (s Service) RegisterUser(req RegisterRequest) (RegisterResponse, error) {
 	}
 	return RegisterResponse{User: createdUser}, nil
 
+}
+
+func (s Service) Login(req LoginRequest) (LoginResponse, error) {
+	user, gErr := s.repository.GetUserByPhoneNumber(req.PhoneNumber)
+	if gErr != nil {
+		return LoginResponse{}, gErr
+	}
+	fmt.Println("userff", user)
+
+	if cErr := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); cErr != nil {
+		return LoginResponse{}, fmt.Errorf("password is incorrect :%v\n", cErr)
+	}
+
+	return LoginResponse{Message: "success", Status: true, user: user}, nil
 }

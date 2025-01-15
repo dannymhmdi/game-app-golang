@@ -28,6 +28,7 @@ func (d *MysqlDB) RegisterUser(user entity.User) (entity.User, error) {
 	if gErr != nil {
 		return entity.User{}, fmt.Errorf("failed to hash password: %v\n", gErr)
 	}
+
 	res, dErr := d.db.Exec(`insert into users(name,phone_number,password)values(?,?,?)`, user.Name, user.PhoneNumber, hashedPassword)
 	if dErr != nil {
 		return entity.User{}, fmt.Errorf("failed to insert user to db :%w\n", dErr)
@@ -42,6 +43,16 @@ func (d *MysqlDB) RegisterUser(user entity.User) (entity.User, error) {
 	return user, nil
 }
 
-//func (d *MysqlDB) IsPassMatch(password string) (bool, error) {
-//	bcrypt.GenerateFromPassword([]byte(password)
-//}
+func (d *MysqlDB) GetUserByPhoneNumber(phoneNumber string) (entity.User, error) {
+	user := entity.User{}
+	row := d.db.QueryRow(`select id,name,phone_number,password from users where phone_number=?`, phoneNumber)
+	if sErr := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &user.Password); sErr != nil {
+		if errors.Is(sErr, sql.ErrNoRows) {
+			return entity.User{}, sErr
+		}
+		return entity.User{}, fmt.Errorf("failed to scan query:%v\n", sErr)
+	}
+
+	return user, nil
+
+}
