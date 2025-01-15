@@ -13,6 +13,13 @@ import (
 )
 
 func main() {
+	//	password := "Danny1377@"
+	//	iErr := passwordvalidation.IsPasswordValid(password)
+	//	if iErr != nil {
+	//		fmt.Println(iErr)
+	//	}
+	//fmt
+	//	return
 	mux := http.NewServeMux()
 	mux.HandleFunc("/users/register", UserRegisterHandler)
 	mux.HandleFunc("/users/login", UserLoginHandler)
