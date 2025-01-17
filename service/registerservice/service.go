@@ -28,33 +28,32 @@ func New(rep RegisterRepositoryService) *Service {
 }
 
 type RegisterRequest struct {
-	Name        string
-	PhoneNumber string
-	Password    string
+	Name        string `json:"name"`
+	PhoneNumber string `json:"phone_number"`
+	Password    string `json:"password"`
 }
 
 type RegisterResponse struct {
-	User entity.User
+	User entity.User `json:"user"`
 }
 
 type LoginRequest struct {
-	PhoneNumber string
-	Password    string
+	PhoneNumber string `json:"phone_number"`
+	Password    string `json:"password"`
 }
 
 type LoginResponse struct {
-	Message     string
-	Status      bool
-	user        entity.User
-	AccessToken string
+	Message     string `json:"message"`
+	Status      bool   `json:"status"`
+	AccessToken string `json:"access_token"`
 }
 
 type ProfileRequest struct {
-	Id uint
+	Id uint `json:"id"`
 }
 
 type ProfileResponse struct {
-	User entity.User
+	User entity.User `json:"user"`
 }
 
 type CustomClaims struct {
