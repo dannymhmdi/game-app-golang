@@ -56,3 +56,19 @@ func (d *MysqlDB) GetUserByPhoneNumber(phoneNumber string) (entity.User, error) 
 	return user, nil
 
 }
+
+func (d *MysqlDB) GetUserById(id uint) (entity.User, error) {
+	row := d.db.QueryRow(`select * from users where id=?`, id)
+	user, sErr := ScanUser(row)
+	if sErr != nil {
+		return entity.User{}, fmt.Errorf("unexpected error:%v\n", sErr)
+	}
+	return user, nil
+}
+
+func ScanUser(row *sql.Row) (entity.User, error) {
+	user := entity.User{}
+	var createdAt []uint8
+	sErr := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &user.Password, &createdAt)
+	return user, sErr
+}

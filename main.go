@@ -13,16 +13,10 @@ import (
 )
 
 func main() {
-	//	password := "Danny1377@"
-	//	iErr := passwordvalidation.IsPasswordValid(password)
-	//	if iErr != nil {
-	//		fmt.Println(iErr)
-	//	}
-	//fmt
-	//	return
 	mux := http.NewServeMux()
 	mux.HandleFunc("/users/register", UserRegisterHandler)
 	mux.HandleFunc("/users/login", UserLoginHandler)
+	mux.HandleFunc("/users/profile", UserProfileHandler)
 	server := http.Server{Addr: ":8080", Handler: mux}
 	fmt.Println(textcolor.Green + "Server is running on port 8080" + textcolor.Reset)
 	log.Fatal(server.ListenAndServe().Error())
@@ -140,6 +134,51 @@ func UserLoginHandler(w http.ResponseWriter, r *http.Request) {
 
 		return
 	}
+
+}
+
+func UserProfileHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		w.WriteHeader(http.StatusMethodNotAllowed)
+		_, wErr := w.Write([]byte(`{"message":"method not allowed","status":false}`))
+		if wErr != nil {
+			fmt.Println(textcolor.Red+"failed to write response:\n", wErr)
+
+			return
+		}
+	}
+	body, rErr := io.ReadAll(r.Body)
+	if rErr != nil {
+		fmt.Println(textcolor.Red + fmt.Sprintf("failed to read body:%v\n", rErr) + textcolor.Reset)
+
+		return
+	}
+
+	bd := registerservice.ProfileRequest{}
+
+	jErr := json.Unmarshal(body, &bd)
+	if jErr != nil {
+		fmt.Println(textcolor.Red + fmt.Sprintf("failed to unmarshall json object:%v\n", rErr) + textcolor.Reset)
+
+		return
+	}
+	profileRepo := mysql.New()
+	profileSvc := registerservice.New(profileRepo)
+	profInfo, gErr := profileSvc.GetUserProfile(bd)
+	if gErr != nil {
+		w.Write([]byte(gErr.Error()))
+
+		return
+	}
+
+	response, mErr := json.Marshal(profInfo)
+	if mErr != nil {
+		fmt.Println(textcolor.Red + fmt.Sprintf("failed to marshall json object:%v\n", rErr) + textcolor.Reset)
+
+		return
+	}
+
+	w.Write(response)
 
 }
 
