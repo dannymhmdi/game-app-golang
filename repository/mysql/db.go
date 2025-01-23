@@ -8,15 +8,25 @@ import (
 )
 
 type MysqlDB struct {
-	db *sql.DB
+	config Config
+	db     *sql.DB
 }
 
-func New() *MysqlDB {
-	db, oErr := sql.Open("mysql", "gameapp:gameappt0lk2o20@tcp(localhost:3308)/gameapp_db")
+type Config struct {
+	Username string
+	Password string
+	Host     string
+	Port     uint
+	DbName   string
+}
+
+func New(cfg Config) *MysqlDB {
+	db, oErr := sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", cfg.Username, cfg.Password, cfg.Host, cfg.Port, cfg.DbName))
 	if oErr != nil {
 		log.Fatalf("failed to connect database: %v\n", oErr)
 	}
 	fmt.Println("connected to database")
-	return &MysqlDB{db}
+
+	return &MysqlDB{db: db, config: cfg}
 
 }

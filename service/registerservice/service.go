@@ -2,12 +2,10 @@ package registerservice
 
 import (
 	"fmt"
-	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"mymodule/entity"
 	"mymodule/pkg/validation/passwordvalidation"
 	"mymodule/pkg/validation/phonenumbervalidation"
-	"time"
 )
 
 type RegisterRepositoryService interface {
@@ -17,13 +15,20 @@ type RegisterRepositoryService interface {
 	GetUserById(id uint) (entity.User, error)
 }
 
+type AuthGenerator interface {
+	CreateAccessToken(user entity.User) (string, error)
+	CreateRefreshToken(user entity.User) (string, error)
+}
+
 type Service struct {
+	authSvc    AuthGenerator
 	repository RegisterRepositoryService
 }
 
-func New(rep RegisterRepositoryService) *Service {
+func New(rep RegisterRepositoryService, authsvc AuthGenerator) *Service {
 	return &Service{
-		rep,
+		authSvc:    authsvc,
+		repository: rep,
 	}
 }
 
@@ -42,10 +47,16 @@ type LoginRequest struct {
 	Password    string `json:"password"`
 }
 
+type Token struct {
+	AccessToken  string `json:"access_token"`
+	RefreshToken string `json:"refresh_token"`
+}
+
 type LoginResponse struct {
-	Message     string `json:"message"`
-	Status      bool   `json:"status"`
-	AccessToken string `json:"access_token"`
+	Message string      `json:"message"`
+	Status  bool        `json:"status"`
+	user    entity.User `json:"user"`
+	Token   Token       `json:"token"`
 }
 
 type ProfileRequest struct {
@@ -54,12 +65,6 @@ type ProfileRequest struct {
 
 type ProfileResponse struct {
 	User entity.User `json:"user"`
-}
-
-type CustomClaims struct {
-	UserId           uint
-	Name             string
-	RegisteredClaims jwt.RegisteredClaims
 }
 
 func (s Service) RegisterUser(req RegisterRequest) (RegisterResponse, error) {
@@ -100,79 +105,27 @@ func (s Service) Login(req LoginRequest) (LoginResponse, error) {
 		return LoginResponse{}, fmt.Errorf("password is incorrect :%v\n", cErr)
 	}
 
-	accessToken, gErr := GenerateJWT(user.ID, user.Name)
+	accessToken, gErr := s.authSvc.CreateAccessToken(user)
 	if gErr != nil {
-		return LoginResponse{}, fmt.Errorf("failed to generate token: %v\n", gErr)
+		return LoginResponse{}, fmt.Errorf("failed to generate access-token: %v\n", gErr)
 	}
 
-	token, vErr := validateJWT(accessToken)
-	if vErr != nil {
-		return LoginResponse{}, fmt.Errorf("failed to validate token: %v\n", vErr)
+	refreshToken, gErr := s.authSvc.CreateRefreshToken(user)
+	if gErr != nil {
+		return LoginResponse{}, fmt.Errorf("failed to generate refresh-token: %v\n", gErr)
 	}
-	fmt.Println("token", token)
-	return LoginResponse{Message: "success", Status: true, user: user, AccessToken: accessToken}, nil
+
+	return LoginResponse{Message: "success", Status: true, user: user, Token: Token{
+		AccessToken:  accessToken,
+		RefreshToken: refreshToken,
+	}}, nil
 }
 
-func (s Service) GetUserProfile(req ProfileRequest) (ProfileResponse, error) {
-	userInfo, gErr := s.repository.GetUserById(req.Id)
+func (s Service) GetUserProfile(id uint) (ProfileResponse, error) {
+	userInfo, gErr := s.repository.GetUserById(id)
 	if gErr != nil {
 		return ProfileResponse{}, gErr
 	}
 
 	return ProfileResponse{User: userInfo}, nil
-}
-
-func GenerateJWT(id uint, name string) (string, error) {
-	mySigningKey := []byte("secret") // Your secret key
-
-	expiresAt := jwt.NewNumericDate(time.Now().Add(time.Hour * 1))
-
-	claims := CustomClaims{
-		UserId: id,
-		Name:   name,
-		RegisteredClaims: jwt.RegisteredClaims{
-			ExpiresAt: expiresAt,
-		},
-	}
-
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString(mySigningKey)
-}
-
-func validateJWT(tokenString string) (*CustomClaims, error) {
-	mySigningKey := []byte("secret") // Your secret key
-
-	token, err := jwt.ParseWithClaims(tokenString, &CustomClaims{}, func(token *jwt.Token) (interface{}, error) {
-		return mySigningKey, nil
-	})
-
-	if err != nil || !token.Valid {
-		return nil, err
-	}
-
-	return token.Claims.(*CustomClaims), nil
-}
-
-func (c CustomClaims) GetExpirationTime() (*jwt.NumericDate, error) {
-	return c.RegisteredClaims.ExpiresAt, nil
-}
-
-func (c CustomClaims) GetIssuedAt() (*jwt.NumericDate, error) {
-	return c.RegisteredClaims.IssuedAt, nil
-}
-
-func (c CustomClaims) GetNotBefore() (*jwt.NumericDate, error) {
-	return c.RegisteredClaims.NotBefore, nil
-}
-
-func (c CustomClaims) GetIssuer() (string, error) {
-	return c.RegisteredClaims.Issuer, nil
-}
-
-func (c CustomClaims) GetSubject() (string, error) {
-	return c.RegisteredClaims.Subject, nil
-}
-
-func (c CustomClaims) GetAudience() (jwt.ClaimStrings, error) {
-	return c.RegisteredClaims.Audience, nil
 }
