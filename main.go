@@ -19,6 +19,12 @@ const (
 )
 
 func main() {
+	//logFile, sErr := logger.SetUpFile("errors.log")
+	//if sErr != nil {
+	//	log.Fatal("failed to setup logger file")
+	//}
+	//defer logFile.Close()
+
 	authSvc, userSvc := setUp()
 	cfg := config.Config{
 		HttpConfig: config.HttpServer{Port: "8080"},

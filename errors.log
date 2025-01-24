@@ -1,0 +1,4 @@
+2025/01/24 10:50:37 log served
+2025/01/24 10:53:53 {function:main time:{wall:13969301700203874600 ext:2956084 loc:0x1010b7200} message:test log pkg:main}\n
+2025/01/24 10:56:02 {function:main time:{wall:13969301838865653896 ext:2971209 loc:0x100ba7200} message:test log pkg:main}\n
+2025/01/24 10:56:02 httpserver log

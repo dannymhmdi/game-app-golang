@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"golang.org/x/crypto/bcrypt"
 	"mymodule/entity"
+	"mymodule/pkg/richerr"
 	"mymodule/pkg/validation/passwordvalidation"
 	"mymodule/pkg/validation/phonenumbervalidation"
 )
@@ -71,15 +72,26 @@ func (s Service) RegisterUser(req RegisterRequest) (RegisterResponse, error) {
 	//TODO - hashing password
 	fmt.Printf("RegisterRequest:%+v\n", req)
 	if iErr := phonenumbervalidation.IsValid(req.PhoneNumber); iErr != nil {
-		return RegisterResponse{}, fmt.Errorf("unexpexted error: %v\n", iErr)
+		return RegisterResponse{}, richerr.New().
+			SetOperation("registerService.RegisterUser").
+			SetWrappedErr(iErr).
+			SetMsg("password is not valid").SetKind(richerr.KindInvalid)
 	}
 
 	if isUnique, iErr := s.repository.IsPhoneNumberUnique(req.PhoneNumber); !isUnique || iErr != nil {
-		return RegisterResponse{}, fmt.Errorf("unexpexted error: %v\n", iErr)
+		return RegisterResponse{}, richerr.New().
+			SetOperation("registerService.RegisterUser").
+			SetWrappedErr(iErr).
+			SetMsg("phone number is not unique").
+			SetKind(richerr.KindInvalid)
 	}
 
 	if iErr := passwordvalidation.IsPasswordValid(req.Password); iErr != nil {
-		return RegisterResponse{}, fmt.Errorf("unexpexted error: %v\n", iErr)
+		return RegisterResponse{}, richerr.New().
+			SetOperation("registerService.RegisterUser").
+			SetWrappedErr(iErr).
+			SetMsg("password is not valid").
+			SetKind(richerr.KindInvalid)
 	}
 
 	createdUser, rErr := s.repository.RegisterUser(entity.User{
@@ -88,9 +100,15 @@ func (s Service) RegisterUser(req RegisterRequest) (RegisterResponse, error) {
 		PhoneNumber: req.PhoneNumber,
 		Password:    req.Password,
 	})
+
 	if rErr != nil {
-		return RegisterResponse{}, fmt.Errorf("unexpexted error: %v\n", rErr)
+		return RegisterResponse{}, richerr.New().
+			SetOperation("registerService.RegisterUser").
+			SetWrappedErr(rErr).
+			SetMsg("failed to register user").
+			SetKind(richerr.KindInvalid)
 	}
+
 	return RegisterResponse{User: createdUser}, nil
 
 }
@@ -98,21 +116,29 @@ func (s Service) RegisterUser(req RegisterRequest) (RegisterResponse, error) {
 func (s Service) Login(req LoginRequest) (LoginResponse, error) {
 	user, gErr := s.repository.GetUserByPhoneNumber(req.PhoneNumber)
 	if gErr != nil {
-		return LoginResponse{}, gErr
+		return LoginResponse{}, richerr.New().
+			SetOperation("registerService.Login").
+			SetWrappedErr(gErr)
 	}
-	fmt.Println("uuu", user)
+
 	if cErr := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); cErr != nil {
 		return LoginResponse{}, fmt.Errorf("password is incorrect :%v\n", cErr)
 	}
 
 	accessToken, gErr := s.authSvc.CreateAccessToken(user)
 	if gErr != nil {
-		return LoginResponse{}, fmt.Errorf("failed to generate access-token: %v\n", gErr)
+		return LoginResponse{}, richerr.New().
+			SetOperation("registerService.Login").
+			SetMsg("failed to generate access-token").
+			SetWrappedErr(gErr)
 	}
 
 	refreshToken, gErr := s.authSvc.CreateRefreshToken(user)
 	if gErr != nil {
-		return LoginResponse{}, fmt.Errorf("failed to generate refresh-token: %v\n", gErr)
+		return LoginResponse{}, richerr.New().
+			SetOperation("registerService.Login").
+			SetWrappedErr(gErr).
+			SetMsg("failed to generate refresh-token")
 	}
 
 	return LoginResponse{Message: "success", Status: true, user: user, Token: Token{
@@ -123,8 +149,13 @@ func (s Service) Login(req LoginRequest) (LoginResponse, error) {
 
 func (s Service) GetUserProfile(id uint) (ProfileResponse, error) {
 	userInfo, gErr := s.repository.GetUserById(id)
+
 	if gErr != nil {
-		return ProfileResponse{}, gErr
+		return ProfileResponse{}, richerr.New().
+			SetOperation("registerService.GetUserProfile").
+			SetMsg("cant find user").
+			SetWrappedErr(gErr).
+			SetKind(richerr.KindNotFound)
 	}
 
 	return ProfileResponse{User: userInfo}, nil

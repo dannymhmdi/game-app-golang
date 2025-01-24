@@ -1,6 +1,8 @@
 package config
 
-import "mymodule/service/authservice"
+import (
+	"mymodule/service/authservice"
+)
 
 type HttpServer struct {
 	Port string
@@ -9,4 +11,5 @@ type HttpServer struct {
 type Config struct {
 	HttpConfig HttpServer
 	AuthConfig authservice.Config
+	//DbConfig mysql.Config
 }

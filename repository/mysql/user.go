@@ -13,7 +13,7 @@ func (d *MysqlDB) IsPhoneNumberUnique(phoneNumber string) (bool, error) {
 	user := entity.User{}
 	var createdAt []uint8
 	row := d.db.QueryRow(`select * from users where phone_number=?`, phoneNumber)
-	err := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &user.Password, &createdAt)
+	err := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &createdAt, &user.Password)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return true, nil
@@ -69,6 +69,6 @@ func (d *MysqlDB) GetUserById(id uint) (entity.User, error) {
 func ScanUser(row *sql.Row) (entity.User, error) {
 	user := entity.User{}
 	var createdAt []uint8
-	sErr := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &user.Password, &createdAt)
+	sErr := row.Scan(&user.ID, &user.Name, &user.PhoneNumber, &createdAt, &user.Password)
 	return user, sErr
 }
