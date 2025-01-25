@@ -62,12 +62,14 @@ func CheckTypeErr(err error) (code Kind, msg string, op string) {
 
 func MapKindToHttpErr(code Kind) int {
 	switch code {
-	case 1:
-		return http.StatusBadRequest
-	case 2:
+	case KindInvalid:
+		return http.StatusUnprocessableEntity
+	case KindForbidden:
 		return http.StatusForbidden
-	case 3:
+	case KindNotFound:
 		return http.StatusNotFound
+	case KindUnexpected:
+		return http.StatusInternalServerError
 	default:
 		return http.StatusInternalServerError
 	}
