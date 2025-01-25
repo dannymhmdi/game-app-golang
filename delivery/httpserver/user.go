@@ -44,13 +44,13 @@ func (s Server) userProfileHandler(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusUnauthorized, "token is empty")
 	}
 
-	//claim, pErr := s.authSvc.ParseToken(token)
-	//if pErr != nil {
-	//	code, msg, op := richerr.CheckTypeErr(pErr)
-	//	return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
-	//}
+	claim, pErr := s.authSvc.ParseToken(token)
+	if pErr != nil {
+		code, msg, op := richerr.CheckTypeErr(pErr)
+		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
+	}
 
-	userInfo, gErr := s.userSvc.GetUserProfile(40)
+	userInfo, gErr := s.userSvc.GetUserProfile(claim.UserId)
 	if gErr != nil {
 		code, msg, op := richerr.CheckTypeErr(gErr)
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})

@@ -1,7 +1,6 @@
 package richerr
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -50,14 +49,20 @@ func (r RichError) Error() string {
 }
 
 func CheckTypeErr(err error) (code Kind, msg string, op string) {
-	switch err.(type) {
-	case RichError:
-		fmt.Println("metallica")
-		richErr := err.(RichError)
-		return richErr.kind, richErr.msg, richErr.operation
-	default:
-		return 0, err.Error(), "unknown operation"
+
+	richErr, ok := err.(RichError)
+	if !ok {
+		return KindUnexpected, "internal server error", "unknown"
 	}
+
+	if richErr.kind == 0 {
+		return CheckTypeErr(richErr.wrappedErr)
+	}
+
+	if MapKindToHttpErr(richErr.kind) >= 500 {
+		return richErr.kind, "internal server error", richErr.operation
+	}
+	return richErr.kind, richErr.msg, richErr.operation
 }
 
 func MapKindToHttpErr(code Kind) int {
