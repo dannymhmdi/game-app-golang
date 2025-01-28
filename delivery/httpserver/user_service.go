@@ -2,18 +2,18 @@ package httpserver
 
 import (
 	"github.com/labstack/echo/v4"
+	"mymodule/dto"
 	"mymodule/pkg/richerr"
-	"mymodule/service/registerservice"
 	"net/http"
 )
 
 func (s Server) userRegisterHandler(c echo.Context) error {
-	bd := registerservice.RegisterRequest{}
+	bd := dto.RegisterRequest{}
 	if bErr := c.Bind(&bd); bErr != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, bErr.Error())
 	}
 
-	createdUSer, rErr := s.userSvc.RegisterUser(bd)
+	createdUSer, rErr := s.userSvc.Register(bd)
 	if rErr != nil {
 		code, msg, op := richerr.CheckTypeErr(rErr)
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
@@ -25,7 +25,7 @@ func (s Server) userRegisterHandler(c echo.Context) error {
 
 func (s Server) userLoginHandler(c echo.Context) error {
 
-	bd := registerservice.LoginRequest{}
+	bd := dto.LoginRequest{}
 	if bErr := c.Bind(&bd); bErr != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, bErr.Error())
 	}

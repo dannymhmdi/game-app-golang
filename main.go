@@ -7,6 +7,7 @@ import (
 	"mymodule/repository/mysql"
 	"mymodule/service/authservice"
 	"mymodule/service/registerservice"
+	"mymodule/validator/uservalidator"
 	"time"
 )
 
@@ -15,7 +16,7 @@ const (
 	accessTokenExpireTime  time.Duration = time.Hour * 1
 	refreshTokenExpireTime time.Duration = time.Hour * 24 * 7
 	refreshSubject                       = "rt"
-	acceessSubject                       = "at"
+	accessSubject                        = "at"
 )
 
 func main() {
@@ -24,7 +25,6 @@ func main() {
 	//	log.Fatal("failed to setup logger file")
 	//}
 	//defer logFile.Close()
-
 	authSvc, userSvc := setUp()
 	cfg := config.Config{
 		HttpConfig: config.HttpServer{Port: "8080"},
@@ -33,7 +33,7 @@ func main() {
 			AccessTokenExpireTime:  accessTokenExpireTime,
 			RefreshTokenExpireTime: refreshTokenExpireTime,
 			RefreshSubject:         refreshSubject,
-			AccessSubject:          acceessSubject,
+			AccessSubject:          accessSubject,
 		},
 	}
 	server := httpserver.New(cfg, *authSvc, *userSvc)
@@ -65,7 +65,7 @@ func setUp() (*authservice.Service, *registerservice.Service) {
 		AccessTokenExpireTime:  accessTokenExpireTime,
 		RefreshTokenExpireTime: refreshTokenExpireTime,
 		RefreshSubject:         refreshSubject,
-		AccessSubject:          acceessSubject,
+		AccessSubject:          accessSubject,
 	}
 
 	dbConfig := mysql.Config{
@@ -77,6 +77,7 @@ func setUp() (*authservice.Service, *registerservice.Service) {
 	}
 	authSvc := authservice.New(cfg)
 	mysqlRepo := mysql.New(dbConfig)
-	userSvc := registerservice.New(mysqlRepo, authSvc)
+	validator := uservalidator.New(mysqlRepo)
+	userSvc := registerservice.New(mysqlRepo, authSvc, *validator)
 	return authSvc, userSvc
 }

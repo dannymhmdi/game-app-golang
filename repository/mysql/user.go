@@ -24,8 +24,8 @@ func (d *MysqlDB) IsPhoneNumberUnique(phoneNumber string) (bool, error) {
 
 	return false, richerr.New().
 		SetKind(richerr.KindUnexpected).
-		SetWrappedErr(errors.New("cant scan query")).
-		SetOperation("mysql.IsPhoneNumberUnique")
+		SetOperation("mysql.IsPhoneNumberUnique").
+		SetMsg("\"phone number is not unique\"")
 }
 
 func (d *MysqlDB) RegisterUser(user entity.User) (entity.User, error) {
