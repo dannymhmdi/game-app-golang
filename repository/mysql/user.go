@@ -67,7 +67,7 @@ func (d *MysqlDB) GetUserByPhoneNumber(phoneNumber string) (entity.User, error) 
 		if errors.Is(sErr, sql.ErrNoRows) {
 			return entity.User{}, richerr.New().
 				SetKind(richerr.KindUnexpected).
-				SetMsg("no record found").
+				SetMsg("user not found").
 				SetOperation("mysql.GetUserByPhoneNumber").
 				SetWrappedErr(sErr)
 		}

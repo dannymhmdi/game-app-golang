@@ -22,7 +22,7 @@ func New(repo ValidatorRepository) *Validator {
 	return &Validator{repository: repo}
 }
 
-func (v Validator) ValidateRegisterCredentials(credential dto.RegisterRequest) (bool, error) {
+func (v Validator) ValidateRegisterCredentials(credential dto.RegisterRequest) error {
 	vErr := validation.ValidateStruct(&credential,
 		validation.Field(&credential.Name, validation.Required, validation.Length(4, 50)),
 
@@ -39,13 +39,14 @@ func (v Validator) ValidateRegisterCredentials(credential dto.RegisterRequest) (
 	)
 
 	if vErr != nil {
-		return false, richerr.New().
+		return richerr.New().
 			SetMsg(vErr.Error()).
 			SetWrappedErr(vErr).
-			SetOperation("uservalidator.ValidateCredentials")
+			SetOperation("uservalidator.ValidateCredentials").
+			SetKind(richerr.KindInvalid)
 	}
 
-	return true, nil
+	return nil
 }
 
 func (v Validator) IsPhoneNumberUnique(value interface{}) error {

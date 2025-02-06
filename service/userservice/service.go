@@ -1,4 +1,4 @@
-package registerservice
+package userservice
 
 import (
 	"mymodule/dto"
@@ -35,13 +35,6 @@ func New(rep RegisterRepositoryService, authsvc AuthGenerator, validator userval
 func (s Service) Register(req dto.RegisterRequest) (dto.RegisterResponse, error) {
 
 	//TODO - wirte validator methods here
-	isValid, vErr := s.validator.ValidateRegisterCredentials(req)
-	if vErr != nil || !isValid {
-		return dto.RegisterResponse{}, richerr.New().
-			SetMsg(vErr.Error()).
-			SetOperation("reigsterservice.RegisterUser").
-			SetKind(richerr.KindInvalid)
-	}
 
 	createdUser, rErr := s.repository.RegisterUser(entity.User{
 		ID:          0,
@@ -63,12 +56,9 @@ func (s Service) Register(req dto.RegisterRequest) (dto.RegisterResponse, error)
 
 func (s Service) Login(req dto.LoginRequest) (dto.LoginResponse, error) {
 
-	user, vErr := s.validator.ValidateLoginCredentials(req)
+	user, vErr := s.repository.GetUserByPhoneNumber(req.PhoneNumber)
 	if vErr != nil {
-		return dto.LoginResponse{}, richerr.New().
-			SetMsg(vErr.Error()).
-			SetOperation("registerService.Login").
-			SetKind(richerr.KindInvalid)
+		return dto.LoginResponse{}, vErr
 	}
 
 	accessToken, gErr := s.authSvc.CreateAccessToken(user)

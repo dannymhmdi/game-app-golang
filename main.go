@@ -4,9 +4,10 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"mymodule/config"
 	"mymodule/delivery/httpserver"
+	"mymodule/delivery/httpserver/user_handler"
 	"mymodule/repository/mysql"
 	"mymodule/service/authservice"
-	"mymodule/service/registerservice"
+	"mymodule/service/userservice"
 	"mymodule/validator/uservalidator"
 	"time"
 )
@@ -25,7 +26,7 @@ func main() {
 	//	log.Fatal("failed to setup logger file")
 	//}
 	//defer logFile.Close()
-	authSvc, userSvc := setUp()
+	userHandler := setUp()
 	cfg := config.Config{
 		HttpConfig: config.HttpServer{Port: "8080"},
 		AuthConfig: authservice.Config{
@@ -35,31 +36,20 @@ func main() {
 			RefreshSubject:         refreshSubject,
 			AccessSubject:          accessSubject,
 		},
+		DbConfig: mysql.Config{
+			Username: "gameapp",
+			Password: "gameappt0lk2o20",
+			Host:     "localhost",
+			Port:     3308,
+			DbName:   "gameapp_db",
+		},
 	}
-	server := httpserver.New(cfg, *authSvc, *userSvc)
+	server := httpserver.New(cfg, *userHandler)
 
 	server.Serve()
-
-	//mux := http.NewServeMux()
-	//mux.HandleFunc("/users/register", UserRegisterHandler)
-	//mux.HandleFunc("/users/login", UserLoginHandler)
-	//mux.HandleFunc("/users/profile", UserProfileHandler)
-	//
-	//handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-	//	w.Write([]byte("you are in route that applied middleware"))
-	//})
-	//
-	//mux.Handle("/users", profileMiddleWare(handler))
-	//server := http.Server{Addr: ":8080", Handler: mux}
-	//fmt.Println(textcolor.Green + "Server is running on port 8080" + textcolor.Reset)
-	//log.Fatal(server.ListenAndServe().Error())
 }
 
-//
-
-//curl -X POST -H "Content-Type: application/json" -d '{"Name":"Hosein", "PhoneNumber":"09122598501"}' http://localhost:8080/users/register
-
-func setUp() (*authservice.Service, *registerservice.Service) {
+func setUp() *user_handler.Handler {
 	cfg := authservice.Config{
 		SigningKey:             signingKey,
 		AccessTokenExpireTime:  accessTokenExpireTime,
@@ -78,6 +68,8 @@ func setUp() (*authservice.Service, *registerservice.Service) {
 	authSvc := authservice.New(cfg)
 	mysqlRepo := mysql.New(dbConfig)
 	validator := uservalidator.New(mysqlRepo)
-	userSvc := registerservice.New(mysqlRepo, authSvc, *validator)
-	return authSvc, userSvc
+	userSvc := userservice.New(mysqlRepo, authSvc, *validator)
+
+	userHandler := user_handler.New(*authSvc, *userSvc, *validator)
+	return userHandler
 }
