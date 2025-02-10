@@ -26,8 +26,5 @@ func (s Server) Serve() {
 	e.Use(middleware.Recover())
 	e.GET("/healthcheck", s.healthCheck)
 	s.userHandler.SetRoute(e)
-	//e.POST("users/register", s.userRegisterHandler)
-	//e.POST("users/login", s.userLoginHandler)
-	//e.GET("users/profile", s.userProfileHandler)
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", s.config.HttpConfig.Port)))
 }

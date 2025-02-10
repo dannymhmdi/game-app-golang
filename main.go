@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"mymodule/config"
 	"mymodule/delivery/httpserver"
@@ -9,6 +10,8 @@ import (
 	"mymodule/service/authservice"
 	"mymodule/service/userservice"
 	"mymodule/validator/uservalidator"
+	"os"
+	"strings"
 	"time"
 )
 
@@ -26,6 +29,10 @@ func main() {
 	//	log.Fatal("failed to setup logger file")
 	//}
 	//defer logFile.Close()
+	s := "daniel"
+	fmt.Println("index", strings.Index(s, "p"))
+	fmt.Println(os.Getenv("GAMEAPP_DB"))
+	config.Load()
 	userHandler := setUp()
 	cfg := config.Config{
 		HttpConfig: config.HttpServer{Port: "8080"},
@@ -70,6 +77,6 @@ func setUp() *user_handler.Handler {
 	validator := uservalidator.New(mysqlRepo)
 	userSvc := userservice.New(mysqlRepo, authSvc, *validator)
 
-	userHandler := user_handler.New(*authSvc, *userSvc, *validator)
+	userHandler := user_handler.New(*authSvc, *userSvc, *validator, []byte(signingKey))
 	return userHandler
 }

@@ -13,11 +13,11 @@ type MysqlDB struct {
 }
 
 type Config struct {
-	Username string
-	Password string
-	Host     string
-	Port     uint
-	DbName   string
+	Username string `koanf:"username"`
+	Password string `koanf:"password"`
+	Host     string `koanf:"host"`
+	Port     uint   `koanf:"port"`
+	DbName   string `koanf:"db_name"`
 }
 
 func New(cfg Config) *MysqlDB {

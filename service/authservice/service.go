@@ -9,11 +9,11 @@ import (
 )
 
 type Config struct {
-	SigningKey             string
-	AccessTokenExpireTime  time.Duration
-	RefreshTokenExpireTime time.Duration
-	RefreshSubject         string
-	AccessSubject          string
+	SigningKey             string        `koanf:"signing_key"`
+	AccessTokenExpireTime  time.Duration `koanf:"access_token_expire_time"`
+	RefreshTokenExpireTime time.Duration `koanf:"refresh_token_expire_time"`
+	RefreshSubject         string        `koanf:"refresh_subject"`
+	AccessSubject          string        `koanf:"access_subject"`
 }
 
 type Service struct {
@@ -56,9 +56,8 @@ func (s Service) CreateToken(user entity.User, expireTime time.Duration, tokenSu
 }
 
 func (s Service) ParseToken(tokenString string) (*CustomClaims, error) { // Your secret key
-	//parsedToken:=&CustomClaims{}
-	tokenString = strings.Split(tokenString, " ")[1]
-	//tokenString = strings.Replace(tokenString, "Bearer ", "", 1)
+
+	tokenString = strings.Replace(tokenString, "Bearer ", "", 1)
 	fmt.Println("tokenString", tokenString)
 	key := []byte(s.config.SigningKey)
 
