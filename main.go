@@ -11,7 +11,6 @@ import (
 	"mymodule/service/userservice"
 	"mymodule/validator/uservalidator"
 	"os"
-	"strings"
 	"time"
 )
 
@@ -29,8 +28,6 @@ func main() {
 	//	log.Fatal("failed to setup logger file")
 	//}
 	//defer logFile.Close()
-	s := "daniel"
-	fmt.Println("index", strings.Index(s, "p"))
 	fmt.Println(os.Getenv("GAMEAPP_DB"))
 	config.Load()
 	userHandler := setUp()

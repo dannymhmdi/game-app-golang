@@ -39,8 +39,8 @@ func Load() *Config {
 		panic(err)
 	}
 
-	k.Load(env.Provider("MYVAR_", ".", func(s string) string {
-		s = strings.TrimPrefix(s, "MYVAR_")
+	k.Load(env.Provider("GAMEAPP_", ".", func(s string) string {
+		s = strings.TrimPrefix(s, "GAMEAPP_")
 		s = strings.ToLower(s)
 		if index := strings.Index(s, "_"); index != -1 {
 			s = s[:index] + s[index+1:]

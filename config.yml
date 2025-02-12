@@ -3,7 +3,7 @@ type: yml
 http_config:
   port: "8088"
 auth:
-  signing_key: "tokenpass"
+#  signing_key: "tokenpass"
   access_token_expire_time: "1h"
   refresh_token_expire_time: "168h"
 db_config:
