@@ -11,16 +11,3 @@ func (h Handler) SetRoute(e *echo.Echo) {
 	userGroup.POST("/login", h.userLoginHandler)
 	userGroup.GET("/profile", h.userProfileHandler, middleware.AuthMiddleWare(h.authSignKey, h.authSvc))
 }
-
-//echojwt.WithConfig(echojwt.Config{
-//ContextKey:    "claim",
-//SigningKey:    h.authSignKey,
-//SigningMethod: "HS256",
-//ParseTokenFunc: func(c echo.Context, auth string) (interface{}, error) {
-//claim, pErr := h.authSvc.ParseToken(auth)
-//if pErr != nil {
-//return nil, pErr
-//}
-//return claim, nil
-//},
-//})

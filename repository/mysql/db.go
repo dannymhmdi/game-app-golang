@@ -12,6 +12,10 @@ type MysqlDB struct {
 	db     *sql.DB
 }
 
+func (m *MysqlDB) NewConn() *sql.DB {
+	return m.db
+}
+
 type Config struct {
 	Username string `koanf:"username"`
 	Password string `koanf:"password"`

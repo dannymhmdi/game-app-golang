@@ -1,11 +1,12 @@
 -- +migrate Up
-CREATE TABLE users (
-                       id INT AUTO_INCREMENT PRIMARY KEY,
-                       name VARCHAR(255) ,
-                       phone_number VARCHAR(20) not null unique,
-                       created_at timestamp default current_timestamp
+CREATE TABLE `users` (
+                       `id` INT AUTO_INCREMENT PRIMARY KEY,
+                       `name` VARCHAR(191) ,
+                       `phone_number` VARCHAR(20) NOT NULL UNIQUE,
+                    `role` ENUM('user','admin') NOT NULL,
+                       `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- +migrate Down
 
-drop table users;
+DROP TABLE `users`;

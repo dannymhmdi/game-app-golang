@@ -23,6 +23,7 @@ type Service struct {
 type CustomClaims struct {
 	UserId           uint
 	Name             string
+	Role             entity.Role
 	RegisteredClaims jwt.RegisteredClaims
 }
 
@@ -46,6 +47,7 @@ func (s Service) CreateToken(user entity.User, expireTime time.Duration, tokenSu
 	claims := CustomClaims{
 		UserId: user.ID,
 		Name:   user.Name,
+		Role:   user.Role,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: expiresAt,
 			Subject:   tokenSubject,

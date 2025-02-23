@@ -73,16 +73,7 @@ func (h Handler) userLoginHandler(c echo.Context) error {
 }
 
 func (h Handler) userProfileHandler(c echo.Context) error {
-	//token := c.Request().Header.Get("Authorization")
-	//if token == "" {
-	//	return echo.NewHTTPError(http.StatusUnauthorized, "token is empty")
-	//}
-	//
-	//claim, pErr := h.authSvc.ParseToken(token)
-	//if pErr != nil {
-	//	code, msg, op := richerr.CheckTypeErr(pErr)
-	//	return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
-	//}
+	//ToDO write a funtion to get claims: getClaims
 	claim := c.Get("claim")
 	customClaims, ok := claim.(*authservice.CustomClaims)
 	if !ok {

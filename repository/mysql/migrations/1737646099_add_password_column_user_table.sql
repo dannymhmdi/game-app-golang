@@ -1,5 +1,5 @@
 -- +migrate Up
-alter table users add column password varchar(255) not null;
+ALTER TABLE `users` ADD COLUMN `password` VARCHAR(191) NOT NULL;
 
 -- +migrate Down
-alter table users drop column password;
+ALTER TABLE `users` DROP COLUMN `password`;

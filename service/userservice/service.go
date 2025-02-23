@@ -41,6 +41,7 @@ func (s Service) Register(req dto.RegisterRequest) (dto.RegisterResponse, error)
 		Name:        req.Name,
 		PhoneNumber: req.PhoneNumber,
 		Password:    req.Password,
+		Role:        entity.UserRole,
 	})
 
 	if rErr != nil {

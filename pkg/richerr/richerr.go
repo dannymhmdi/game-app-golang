@@ -11,6 +11,7 @@ const (
 	KindForbidden
 	KindNotFound
 	KindUnexpected
+	KindUnathorized
 )
 
 type RichError struct {
