@@ -5,12 +5,12 @@ import (
 	"github.com/labstack/echo/v4"
 	"mymodule/dto"
 	"mymodule/pkg/richerr"
-	"mymodule/service/authorization"
+	"mymodule/service/authorizationService"
 	"mymodule/service/authservice"
 	"net/http"
 )
 
-func AccessCheckMiddleware(authSvc authservice.Service, authorizationSvc authorization.Service) echo.MiddlewareFunc {
+func AccessCheckMiddleware(authSvc authservice.Service, authorizationSvc authorizationService.Service) echo.MiddlewareFunc {
 
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {

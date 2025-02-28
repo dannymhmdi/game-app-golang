@@ -1,4 +1,4 @@
-package authorization
+package authorizationService
 
 import (
 	"mymodule/entity"

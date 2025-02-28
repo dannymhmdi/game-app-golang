@@ -2,7 +2,7 @@ package backOffice_handler
 
 import (
 	"github.com/labstack/echo/v4"
-	"mymodule/service/authorization"
+	"mymodule/service/authorizationService"
 	"mymodule/service/authservice"
 	"mymodule/service/backoffice"
 	"net/http"
@@ -11,10 +11,10 @@ import (
 type Handler struct {
 	backOfficeSvc    backoffice.Service
 	auth             authservice.Service
-	authorizationSvc authorization.Service
+	authorizationSvc authorizationService.Service
 }
 
-func New(backofficeSvc backoffice.Service, auth authservice.Service, authorizationSvc authorization.Service) *Handler {
+func New(backofficeSvc backoffice.Service, auth authservice.Service, authorizationSvc authorizationService.Service) *Handler {
 	return &Handler{
 		backOfficeSvc:    backofficeSvc,
 		auth:             auth,

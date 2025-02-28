@@ -54,5 +54,5 @@ func Load() *Config {
 		panic(uErr)
 	}
 	fmt.Printf("config: %+v\n", config)
-	return &Config{}
+	return &config
 }

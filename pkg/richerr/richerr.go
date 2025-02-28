@@ -76,6 +76,8 @@ func MapKindToHttpErr(code Kind) int {
 		return http.StatusNotFound
 	case KindUnexpected:
 		return http.StatusInternalServerError
+	case KindUnathorized:
+		return http.StatusUnauthorized
 	default:
 		return http.StatusInternalServerError
 	}

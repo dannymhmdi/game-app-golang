@@ -3,24 +3,10 @@ package uservalidator
 import (
 	validation "github.com/go-ozzo/ozzo-validation"
 	"mymodule/dto"
-	"mymodule/entity"
 	"mymodule/pkg/richerr"
 	"regexp"
 	"unicode"
 )
-
-type ValidatorRepository interface {
-	IsPhoneNumberUnique(phoneNumber string) (bool, error)
-	GetUserByPhoneNumber(phoneNumber string) (entity.User, error)
-}
-
-type Validator struct {
-	repository ValidatorRepository
-}
-
-func New(repo ValidatorRepository) *Validator {
-	return &Validator{repository: repo}
-}
 
 func (v Validator) ValidateRegisterCredentials(credential dto.RegisterRequest) error {
 	vErr := validation.ValidateStruct(&credential,
