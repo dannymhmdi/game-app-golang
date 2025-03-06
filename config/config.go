@@ -9,6 +9,7 @@ import (
 	"github.com/knadh/koanf/v2"
 	"mymodule/repository/mysql"
 	"mymodule/service/authservice"
+	"mymodule/service/matchmakingService"
 	"strings"
 )
 
@@ -17,9 +18,10 @@ type HttpServer struct {
 }
 
 type Config struct {
-	HttpConfig HttpServer         `koanf:"http_config"`
-	AuthConfig authservice.Config `koanf:"auth"`
-	DbConfig   mysql.Config       `koanf:"db_config"`
+	HttpConfig        HttpServer                `koanf:"http_config"`
+	AuthConfig        authservice.Config        `koanf:"auth"`
+	DbConfig          mysql.Config              `koanf:"db_config"`
+	MatchMakingConfig matchmakingService.Config `koanf:"matchmaking_config"`
 }
 
 func Load() *Config {

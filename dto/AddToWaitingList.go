@@ -1,6 +1,9 @@
 package dto
 
-import "mymodule/entity"
+import (
+	"mymodule/entity"
+	"time"
+)
 
 type AddToWaitingListRequest struct {
 	UserId   uint            `json:"user_id"`
@@ -10,5 +13,5 @@ type AddToWaitingListRequest struct {
 type AddToWaitingListResponse struct {
 	Message string `json:"message"`
 	//Timeout time.Duration `json:"timeout"`
-	Timeout int `json:"timeout"`
+	Timeout time.Time `json:"timeout"`
 }

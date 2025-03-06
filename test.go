@@ -1,30 +1,16 @@
 package main
 
-import (
-	"context"
-	"fmt"
-	"github.com/redis/go-redis/v9"
-	"time"
-)
+import "fmt"
 
 func main() {
-	rdb := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6380",
-		Password: "", // No password set
-		DB:       0,  // Use default DB
-	})
-	ctx := context.Background()
-	err := rdb.Set(ctx, "bob", 26, 1*time.Second).Err()
-	if err != nil {
-		fmt.Println("err", err)
+	ch := make(chan int, 2)
+	ch <- 1
+	ch <- 2
+	close(ch)
 
-		return
+	// Receiving from the closed channel
+	for value := range ch {
+		fmt.Println("value", value)
 	}
-	value, gErr := rdb.Get(ctx, "bob").Result()
-	if gErr != nil {
-		fmt.Println("gErr", gErr)
-
-		return
-	}
-	fmt.Println("value", value)
+	fmt.Println("done")
 }

@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	"golang.org/x/net/context"
 	"mymodule/adaptor/redis"
 	"mymodule/config"
 	"mymodule/delivery/httpserver"
@@ -12,13 +14,16 @@ import (
 	"mymodule/repository/mysql/mysqlAccessControl"
 	"mymodule/repository/mysql/mysqlUser"
 	"mymodule/repository/redisMatchMaking"
+	"mymodule/scheduler"
 	"mymodule/service/authorizationService"
 	"mymodule/service/authservice"
 	"mymodule/service/backoffice"
+	"mymodule/service/matchmakingService"
 	"mymodule/service/userservice"
-	"mymodule/service/waitingListService"
 	"mymodule/validator/matchMakingValidator"
 	"mymodule/validator/uservalidator"
+	"os"
+	"os/signal"
 	"time"
 )
 
@@ -37,7 +42,7 @@ func main() {
 	//}
 	//defer logFile.Close()
 	config.Load()
-	userHandler, backOfficeHandler, matchMakingHandler := setUp()
+	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc := setUp()
 	cfg := config.Config{
 		HttpConfig: config.HttpServer{Port: "8080"},
 		AuthConfig: authservice.Config{
@@ -55,12 +60,37 @@ func main() {
 			DbName:   "gameapp_db",
 		},
 	}
-	server := httpserver.New(cfg, *userHandler, *backOfficeHandler, *matchMakingHandler)
 
-	server.Serve()
+	server := httpserver.New(cfg, *userHandler, *backOfficeHandler, *matchMakingHandler)
+	done := make(chan bool)
+	quit := make(chan os.Signal)
+
+	schedulerOp := scheduler.New(matchmakingSvc)
+	signal.Notify(quit, os.Interrupt)
+	go func() {
+		schedulerOp.Start(done)
+	}()
+
+	go func() {
+		server.Serve()
+	}()
+
+	<-quit
+	done <- true
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	if sErr := server.Router.Shutdown(ctx); sErr != nil {
+		fmt.Println(sErr)
+	}
+	<-ctx.Done()
+
+	//time.Sleep(6 * time.Second)
+	fmt.Println("app terminated gracefully")
+
 }
 
-func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler) {
+func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service) {
 	cfg := authservice.Config{
 		SigningKey:             signingKey,
 		AccessTokenExpireTime:  accessTokenExpireTime,
@@ -81,6 +111,10 @@ func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_h
 		Host: "localhost",
 		Port: 6380,
 	}
+
+	matchMakingCfg := matchmakingService.Config{
+		Timeout: time.Now(),
+	}
 	authSvc := authservice.New(cfg)
 	mysqlDB := mysql.New(dbConfig)
 	userRepo := mysqlUser.New(mysqlDB)
@@ -94,7 +128,7 @@ func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_h
 	matchMakerValidator := matchMakingValidator.New()
 	redisAdaptor := redis.New(redisAdaptorCfg)
 	matchMakingRepo := redisMatchMaking.New(redisAdaptor)
-	matchMakingSvc := waitingListService.New(matchMakingRepo)
+	matchMakingSvc := matchmakingService.New(matchMakingRepo, matchMakingCfg)
 	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(signingKey), *matchMakerValidator)
-	return userHandler, backOfficeHandler, waitingListHandler
+	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc
 }

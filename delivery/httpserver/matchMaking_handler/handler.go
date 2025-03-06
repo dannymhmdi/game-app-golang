@@ -5,19 +5,19 @@ import (
 	"mymodule/dto"
 	"mymodule/pkg/richerr"
 	"mymodule/service/authservice"
-	"mymodule/service/waitingListService"
+	"mymodule/service/matchmakingService"
 	"mymodule/validator/matchMakingValidator"
 	"net/http"
 )
 
 type Handler struct {
-	matchMakingSvc       waitingListService.Service
+	matchMakingSvc       matchmakingService.Service
 	authSvc              authservice.Service
 	signingKey           []byte
 	matchMakingValidator matchMakingValidator.Validator
 }
 
-func New(matchMakingSvc waitingListService.Service, authSvc authservice.Service, signingKey []byte, validator matchMakingValidator.Validator) *Handler {
+func New(matchMakingSvc matchmakingService.Service, authSvc authservice.Service, signingKey []byte, validator matchMakingValidator.Validator) *Handler {
 	return &Handler{
 		matchMakingSvc:       matchMakingSvc,
 		authSvc:              authSvc,

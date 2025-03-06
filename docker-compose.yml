@@ -10,8 +10,8 @@ services:
      restart: always
      environment:
       - ALLOW_EMPTY_PASSWORD=yes
-     volumes:
-       - gameapp-redis-data:/bitnami/redis/data
+#     volumes:
+#       - gameapp-redis-data:/bitnami/redis/data
     gameapp-database:
      image: mysql:8.0
      ports:
@@ -30,4 +30,4 @@ services:
 
 volumes:
   dbdata:
-  gameapp-redis-data:
+#  gameapp-redis-data:
