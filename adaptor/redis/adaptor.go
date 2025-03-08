@@ -11,13 +11,13 @@ type Adaptor struct {
 }
 
 type Config struct {
-	Addr string
-	DB   int
-	Port uint
-	Host string
+	Addr string `koanf:"addr"`
+	DB   int    `koanf:"db"`
+	Port uint   `koanf:"port"`
+	Host string `koanf:"host"`
 }
 
-func (a Adaptor) Conn() *redis.Client {
+func (a Adaptor) Client() *redis.Client {
 	return a.client
 }
 
@@ -31,4 +31,5 @@ func New(config Config) Adaptor {
 		client: client,
 		config: config,
 	}
+
 }

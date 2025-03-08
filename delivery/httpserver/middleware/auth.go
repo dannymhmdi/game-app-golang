@@ -3,10 +3,10 @@ package middleware
 import (
 	echojwt "github.com/labstack/echo-jwt/v4"
 	"github.com/labstack/echo/v4"
-	"mymodule/service/authservice"
+	"mymodule/service/authService"
 )
 
-func AuthMiddleWare(signKey []byte, authSvc authservice.Service) echo.MiddlewareFunc {
+func AuthMiddleWare(signKey []byte, authSvc authService.Service) echo.MiddlewareFunc {
 	return echojwt.WithConfig(echojwt.Config{
 		ContextKey:    "claim",
 		SigningKey:    signKey,

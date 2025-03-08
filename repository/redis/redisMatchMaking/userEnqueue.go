@@ -13,7 +13,7 @@ func (r RedisDB) Enqueue(userId uint, category entity.Category) error {
 	zsetKey := fmt.Sprintf("waitingList:%s", category)
 
 	ctx := context.Background()
-	_, zErr := r.adaptor.Conn().ZAdd(ctx, zsetKey, redis.Z{
+	_, zErr := r.adaptor.Client().ZAdd(ctx, zsetKey, redis.Z{
 		Score:  float64(time.Now().UnixMicro()),
 		Member: userId,
 	}).Result()

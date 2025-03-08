@@ -39,8 +39,6 @@ func (s Server) Serve() {
 	s.userHandler.SetRoute(s.Router)
 	s.backOfficeHandler.SetBackOfficeRoute(s.Router)
 	s.waitingListHandler.SetMatchMakingRoute(s.Router)
-
-	//s.Router.Logger.Fatal(s.Router.Start(fmt.Sprintf(":%s", s.config.HttpConfig.Port)))
 	if err := s.Router.Start(fmt.Sprintf(":%s", s.config.HttpConfig.Port)); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Fatalf("failed tostart http server : %v", err)
 	} else if errors.Is(err, http.ErrServerClosed) {

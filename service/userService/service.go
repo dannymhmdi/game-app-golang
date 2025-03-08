@@ -1,8 +1,8 @@
-package userservice
+package userService
 
 import (
-	"mymodule/dto"
 	"mymodule/entity"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
 	"mymodule/validator/uservalidator"
 )
@@ -32,7 +32,7 @@ func New(rep RegisterRepositoryService, authsvc AuthGenerator, validator userval
 	}
 }
 
-func (s Service) Register(req dto.RegisterRequest) (dto.RegisterResponse, error) {
+func (s Service) Register(req params.RegisterRequest) (params.RegisterResponse, error) {
 
 	//TODO - wirte validator methods here
 
@@ -45,26 +45,26 @@ func (s Service) Register(req dto.RegisterRequest) (dto.RegisterResponse, error)
 	})
 
 	if rErr != nil {
-		return dto.RegisterResponse{}, richerr.New().
+		return params.RegisterResponse{}, richerr.New().
 			SetOperation("registerService.RegisterUser").
 			SetWrappedErr(rErr).
 			SetMsg("failed to register user").
 			SetKind(richerr.KindInvalid)
 	}
 
-	return dto.RegisterResponse{User: createdUser}, nil
+	return params.RegisterResponse{User: createdUser}, nil
 }
 
-func (s Service) Login(req dto.LoginRequest) (dto.LoginResponse, error) {
+func (s Service) Login(req params.LoginRequest) (params.LoginResponse, error) {
 
 	user, vErr := s.repository.GetUserByPhoneNumber(req.PhoneNumber)
 	if vErr != nil {
-		return dto.LoginResponse{}, vErr
+		return params.LoginResponse{}, vErr
 	}
 
 	accessToken, gErr := s.authSvc.CreateAccessToken(user)
 	if gErr != nil {
-		return dto.LoginResponse{}, richerr.New().
+		return params.LoginResponse{}, richerr.New().
 			SetOperation("registerService.Login").
 			SetMsg("failed to generate access-token").
 			SetWrappedErr(gErr)
@@ -72,28 +72,28 @@ func (s Service) Login(req dto.LoginRequest) (dto.LoginResponse, error) {
 
 	refreshToken, gErr := s.authSvc.CreateRefreshToken(user)
 	if gErr != nil {
-		return dto.LoginResponse{}, richerr.New().
+		return params.LoginResponse{}, richerr.New().
 			SetOperation("registerService.Login").
 			SetWrappedErr(gErr).
 			SetMsg("failed to generate refresh-token")
 	}
 
-	return dto.LoginResponse{Message: "success", Status: true, Token: dto.Token{
+	return params.LoginResponse{Message: "success", Status: true, Token: params.Token{
 		AccessToken:  accessToken,
 		RefreshToken: refreshToken,
 	}}, nil
 }
 
-func (s Service) GetUserProfile(id uint) (dto.ProfileResponse, error) {
+func (s Service) GetUserProfile(id uint) (params.ProfileResponse, error) {
 	userInfo, gErr := s.repository.GetUserById(id)
 
 	if gErr != nil {
-		return dto.ProfileResponse{}, richerr.New().
+		return params.ProfileResponse{}, richerr.New().
 			SetOperation("registerService.GetUserProfile").
 			SetMsg("cant find user").
 			SetWrappedErr(gErr).
 			SetKind(richerr.KindNotFound)
 	}
 
-	return dto.ProfileResponse{User: userInfo}, nil
+	return params.ProfileResponse{User: userInfo}, nil
 }

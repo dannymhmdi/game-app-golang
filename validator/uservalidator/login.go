@@ -3,12 +3,12 @@ package uservalidator
 import (
 	validation "github.com/go-ozzo/ozzo-validation"
 	"golang.org/x/crypto/bcrypt"
-	"mymodule/dto"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
 	"regexp"
 )
 
-func (v Validator) ValidateLoginCredentials(credential dto.LoginRequest) error {
+func (v Validator) ValidateLoginCredentials(credential params.LoginRequest) error {
 	err := validation.ValidateStruct(&credential,
 		validation.Field(&credential.PhoneNumber,
 			validation.Required, validation.Length(11, 11),

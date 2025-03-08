@@ -1,4 +1,4 @@
-package dto
+package params
 
 import (
 	"mymodule/entity"

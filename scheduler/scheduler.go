@@ -13,7 +13,7 @@ type Scheduler struct {
 }
 
 func New(matchmakingSvc matchmakingService.Service) *Scheduler {
-	s, nErr := gocron.NewScheduler()
+	scheduler, nErr := gocron.NewScheduler()
 	if nErr != nil {
 		fmt.Println("failed to init scheduler", nErr)
 
@@ -22,7 +22,7 @@ func New(matchmakingSvc matchmakingService.Service) *Scheduler {
 
 	return &Scheduler{
 		matchMakingSvc: matchmakingSvc,
-		scheduler:      s,
+		scheduler:      scheduler,
 	}
 }
 

@@ -1,4 +1,4 @@
-package backoffice
+package backofficeService
 
 import "mymodule/entity"
 

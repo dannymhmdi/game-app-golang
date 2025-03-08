@@ -2,13 +2,13 @@ package uservalidator
 
 import (
 	validation "github.com/go-ozzo/ozzo-validation"
-	"mymodule/dto"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
 	"regexp"
 	"unicode"
 )
 
-func (v Validator) ValidateRegisterCredentials(credential dto.RegisterRequest) error {
+func (v Validator) ValidateRegisterCredentials(credential params.RegisterRequest) error {
 	vErr := validation.ValidateStruct(&credential,
 		validation.Field(&credential.Name, validation.Required, validation.Length(4, 50)),
 

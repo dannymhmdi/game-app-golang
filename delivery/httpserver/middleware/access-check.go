@@ -3,14 +3,14 @@ package middleware
 import (
 	"fmt"
 	"github.com/labstack/echo/v4"
-	"mymodule/dto"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
+	"mymodule/service/authService"
 	"mymodule/service/authorizationService"
-	"mymodule/service/authservice"
 	"net/http"
 )
 
-func AccessCheckMiddleware(authSvc authservice.Service, authorizationSvc authorizationService.Service) echo.MiddlewareFunc {
+func AccessCheckMiddleware(authSvc authService.Service, authorizationSvc authorizationService.Service) echo.MiddlewareFunc {
 
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
@@ -23,7 +23,7 @@ func AccessCheckMiddleware(authSvc authservice.Service, authorizationSvc authori
 
 			//var bd dto.PermissionRequest
 
-			bd := dto.PermissionRequest{}
+			bd := params.PermissionRequest{}
 			if bErr := c.Bind(&bd); bErr != nil {
 				return echo.NewHTTPError(http.StatusInternalServerError, bErr.Error())
 			}

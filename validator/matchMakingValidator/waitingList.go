@@ -2,8 +2,8 @@ package matchMakingValidator
 
 import (
 	validation "github.com/go-ozzo/ozzo-validation"
-	"mymodule/dto"
 	"mymodule/entity"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
 )
 
@@ -14,7 +14,7 @@ func New() *Validator {
 	return &Validator{}
 }
 
-func (v Validator) ValidateMatchMakingCredentials(credential dto.AddToWaitingListRequest) error {
+func (v Validator) ValidateMatchMakingCredentials(credential params.AddToWaitingListRequest) error {
 	err := validation.ValidateStruct(&credential,
 		validation.Field(&credential.Category,
 			validation.Required,

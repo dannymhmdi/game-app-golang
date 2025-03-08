@@ -2,8 +2,8 @@ package matchmakingService
 
 import (
 	"fmt"
-	"mymodule/dto"
 	"mymodule/entity"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
 	"time"
 )
@@ -28,20 +28,21 @@ func New(repo MatchMakingRepositoryService, cfg Config) *Service {
 	}
 }
 
-func (s Service) AddToWaitingList(req dto.AddToWaitingListRequest) (dto.AddToWaitingListResponse, error) {
+func (s Service) AddToWaitingList(req params.AddToWaitingListRequest) (params.AddToWaitingListResponse, error) {
 	eErr := s.repository.Enqueue(req.UserId, req.Category)
 	if eErr != nil {
 		fmt.Println("kiri", eErr)
-		return dto.AddToWaitingListResponse{}, richerr.New().
+		return params.AddToWaitingListResponse{}, richerr.New().
 			SetMsg(eErr.Error()).
 			SetOperation("matchMakingService.AddToWaitingList").
 			SetKind(richerr.KindUnexpected).
 			SetWrappedErr(eErr)
 	}
-	return dto.AddToWaitingListResponse{Message: "successfully add to list", Timeout: s.config.Timeout}, nil
+	return params.AddToWaitingListResponse{Message: "successfully add to list", Timeout: s.config.Timeout}, nil
 }
 
 func (s Service) MatchMaking() error {
+
 	fmt.Println("matchmakin service run", time.Now())
 	return fmt.Errorf("matchmaking service error")
 }

@@ -2,9 +2,9 @@ package matchMaking_handler
 
 import (
 	"github.com/labstack/echo/v4"
-	"mymodule/dto"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
-	"mymodule/service/authservice"
+	"mymodule/service/authService"
 	"mymodule/service/matchmakingService"
 	"mymodule/validator/matchMakingValidator"
 	"net/http"
@@ -12,12 +12,12 @@ import (
 
 type Handler struct {
 	matchMakingSvc       matchmakingService.Service
-	authSvc              authservice.Service
+	authSvc              authService.Service
 	signingKey           []byte
 	matchMakingValidator matchMakingValidator.Validator
 }
 
-func New(matchMakingSvc matchmakingService.Service, authSvc authservice.Service, signingKey []byte, validator matchMakingValidator.Validator) *Handler {
+func New(matchMakingSvc matchmakingService.Service, authSvc authService.Service, signingKey []byte, validator matchMakingValidator.Validator) *Handler {
 	return &Handler{
 		matchMakingSvc:       matchMakingSvc,
 		authSvc:              authSvc,
@@ -27,8 +27,8 @@ func New(matchMakingSvc matchmakingService.Service, authSvc authservice.Service,
 }
 
 func (h Handler) MatchMakingHandler(c echo.Context) error {
-	claim := c.Get("claim").(*authservice.CustomClaims)
-	var bd dto.AddToWaitingListRequest
+	claim := c.Get("claim").(*authService.CustomClaims)
+	var bd params.AddToWaitingListRequest
 	if bErr := c.Bind(&bd); bErr != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, echo.Map{"error": bErr.Error()})
 	}

@@ -2,10 +2,11 @@ package user_handler
 
 import (
 	"github.com/labstack/echo/v4"
-	"mymodule/dto"
+	"mymodule/params"
 	"mymodule/pkg/richerr"
-	"mymodule/service/authservice"
-	"mymodule/service/userservice"
+	"mymodule/service/authService"
+	"mymodule/service/presenceService"
+	"mymodule/service/userService"
 	"mymodule/validator/uservalidator"
 	"net/http"
 )
@@ -14,23 +15,25 @@ import (
 //		ParseToken(tokenString string) (*authservice.CustomClaims, error)
 //	}
 type Handler struct {
-	authSvc       authservice.Service
-	userSvc       userservice.Service
+	authSvc       authService.Service
+	userSvc       userService.Service
+	presenceSvc   presenceService.Service
 	userValidator uservalidator.Validator
 	authSignKey   []byte
 }
 
-func New(authSvc authservice.Service, userSvc userservice.Service, validator uservalidator.Validator, signKey []byte) *Handler {
+func New(authSvc authService.Service, userSvc userService.Service, presenceSvc presenceService.Service, validator uservalidator.Validator, signKey []byte) *Handler {
 	return &Handler{
 		authSvc:       authSvc,
 		userSvc:       userSvc,
+		presenceSvc:   presenceSvc,
 		userValidator: validator,
 		authSignKey:   signKey,
 	}
 }
 
 func (h Handler) userRegisterHandler(c echo.Context) error {
-	bd := dto.RegisterRequest{}
+	bd := params.RegisterRequest{}
 	if bErr := c.Bind(&bd); bErr != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, bErr.Error())
 	}
@@ -53,7 +56,7 @@ func (h Handler) userRegisterHandler(c echo.Context) error {
 
 func (h Handler) userLoginHandler(c echo.Context) error {
 
-	bd := dto.LoginRequest{}
+	bd := params.LoginRequest{}
 	if bErr := c.Bind(&bd); bErr != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, bErr.Error())
 	}
@@ -75,7 +78,7 @@ func (h Handler) userLoginHandler(c echo.Context) error {
 func (h Handler) userProfileHandler(c echo.Context) error {
 	//ToDO write a funtion to get claims: getClaims
 	claim := c.Get("claim")
-	customClaims, ok := claim.(*authservice.CustomClaims)
+	customClaims, ok := claim.(*authService.CustomClaims)
 	if !ok {
 		return echo.NewHTTPError(http.StatusUnauthorized, echo.Map{"message": "token is not valid"})
 	}

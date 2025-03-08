@@ -13,26 +13,20 @@ import (
 	"mymodule/repository/mysql"
 	"mymodule/repository/mysql/mysqlAccessControl"
 	"mymodule/repository/mysql/mysqlUser"
-	"mymodule/repository/redisMatchMaking"
+	"mymodule/repository/redis/redisMatchMaking"
+	"mymodule/repository/redis/redisPresence"
 	"mymodule/scheduler"
+	"mymodule/service/authService"
 	"mymodule/service/authorizationService"
-	"mymodule/service/authservice"
-	"mymodule/service/backoffice"
+	"mymodule/service/backofficeService"
 	"mymodule/service/matchmakingService"
-	"mymodule/service/userservice"
+	"mymodule/service/presenceService"
+	"mymodule/service/userService"
 	"mymodule/validator/matchMakingValidator"
 	"mymodule/validator/uservalidator"
 	"os"
 	"os/signal"
 	"time"
-)
-
-const (
-	signingKey             string        = "tokenpass"
-	accessTokenExpireTime  time.Duration = time.Hour * 1
-	refreshTokenExpireTime time.Duration = time.Hour * 24 * 7
-	refreshSubject                       = "rt"
-	accessSubject                        = "at"
 )
 
 func main() {
@@ -41,27 +35,10 @@ func main() {
 	//	log.Fatal("failed to setup logger file")
 	//}
 	//defer logFile.Close()
-	config.Load()
-	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc := setUp()
-	cfg := config.Config{
-		HttpConfig: config.HttpServer{Port: "8080"},
-		AuthConfig: authservice.Config{
-			SigningKey:             signingKey,
-			AccessTokenExpireTime:  accessTokenExpireTime,
-			RefreshTokenExpireTime: refreshTokenExpireTime,
-			RefreshSubject:         refreshSubject,
-			AccessSubject:          accessSubject,
-		},
-		DbConfig: mysql.Config{
-			Username: "gameapp",
-			Password: "gameappt0lk2o20",
-			Host:     "localhost",
-			Port:     3308,
-			DbName:   "gameapp_db",
-		},
-	}
+	//config.Load()
+	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, appConfig := setUp()
 
-	server := httpserver.New(cfg, *userHandler, *backOfficeHandler, *matchMakingHandler)
+	server := httpserver.New(appConfig, *userHandler, *backOfficeHandler, *matchMakingHandler)
 	done := make(chan bool)
 	quit := make(chan os.Signal)
 
@@ -85,50 +62,29 @@ func main() {
 	}
 	<-ctx.Done()
 
-	//time.Sleep(6 * time.Second)
 	fmt.Println("app terminated gracefully")
 
 }
 
-func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service) {
-	cfg := authservice.Config{
-		SigningKey:             signingKey,
-		AccessTokenExpireTime:  accessTokenExpireTime,
-		RefreshTokenExpireTime: refreshTokenExpireTime,
-		RefreshSubject:         refreshSubject,
-		AccessSubject:          accessSubject,
-	}
+func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, config.Config) {
+	appConfig := config.Load()
 
-	dbConfig := mysql.Config{
-		Username: "gameapp",
-		Password: "gameappt0lk2o20",
-		Host:     "localhost",
-		Port:     3308,
-		DbName:   "gameapp_db",
-	}
-
-	redisAdaptorCfg := redis.Config{
-		Host: "localhost",
-		Port: 6380,
-	}
-
-	matchMakingCfg := matchmakingService.Config{
-		Timeout: time.Now(),
-	}
-	authSvc := authservice.New(cfg)
-	mysqlDB := mysql.New(dbConfig)
+	authSvc := authService.New(appConfig.AuthConfig)
+	mysqlDB := mysql.New(appConfig.DbConfig)
 	userRepo := mysqlUser.New(mysqlDB)
 	validator := uservalidator.New(userRepo)
-	userSvc := userservice.New(userRepo, authSvc, *validator)
+	userSvc := userService.New(userRepo, authSvc, *validator)
 	authorizationRepo := mysqlAccessControl.New(mysqlDB)
 	authorizationSvc := authorizationService.New(authorizationRepo)
-	backOfficeSvc := backoffice.New()
-	userHandler := user_handler.New(*authSvc, *userSvc, *validator, []byte(signingKey))
+	backOfficeSvc := backofficeService.New()
 	backOfficeHandler := backOffice_handler.New(*backOfficeSvc, *authSvc, *authorizationSvc)
 	matchMakerValidator := matchMakingValidator.New()
-	redisAdaptor := redis.New(redisAdaptorCfg)
+	redisAdaptor := redis.New(appConfig.RedisConfig)
 	matchMakingRepo := redisMatchMaking.New(redisAdaptor)
-	matchMakingSvc := matchmakingService.New(matchMakingRepo, matchMakingCfg)
-	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(signingKey), *matchMakerValidator)
-	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc
+	matchMakingSvc := matchmakingService.New(matchMakingRepo, appConfig.MatchMakingConfig)
+	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(appConfig.AuthConfig.SigningKey), *matchMakerValidator)
+	presenceRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
+	presenceSvc := presenceService.New(presenceRepo)
+	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, []byte(appConfig.AuthConfig.SigningKey))
+	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, appConfig
 }

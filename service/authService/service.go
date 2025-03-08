@@ -1,4 +1,4 @@
-package authservice
+package authService
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 )
 
 type Config struct {
-	SigningKey             string        `koanf:"signing_key"`
+	SigningKey             string        `koanf:"signKey"`
 	AccessTokenExpireTime  time.Duration `koanf:"access_token_expire_time"`
 	RefreshTokenExpireTime time.Duration `koanf:"refresh_token_expire_time"`
 	RefreshSubject         string        `koanf:"refresh_subject"`
