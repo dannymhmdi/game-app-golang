@@ -21,15 +21,15 @@ func PresenceMiddleWare(authSvc authService.Service, presenceSvc presenceService
 			}
 			req := params.PresenseRequest{
 				UserId:    claim.UserId,
-				Timestamp: time.Now().UnixMilli(),
+				Timestamp: time.Now().UnixMicro(),
 			}
-			res, pErr := presenceSvc.Presence(context.Background(), req)
+			_, pErr = presenceSvc.Presence(context.Background(), req)
 			if pErr != nil {
 				code, msg, op := richerr.CheckTypeErr(pErr)
 				return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
 			}
 
-			return c.JSON(http.StatusOK, res)
+			return next(c)
 		}
 	}
 }

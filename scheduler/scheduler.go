@@ -1,8 +1,11 @@
 package scheduler
 
 import (
+	"context"
 	"fmt"
 	"github.com/go-co-op/gocron/v2"
+	"mymodule/entity"
+	"mymodule/params"
 	"mymodule/service/matchmakingService"
 	"time"
 )
@@ -33,12 +36,15 @@ func (s Scheduler) Start(ch <-chan bool) {
 		),
 		gocron.NewTask(
 			func() {
-				if err := s.matchMakingSvc.MatchMaking(); err != nil {
-					fmt.Println("error in service call scheduler", err)
+
+				res, err := s.matchMakingSvc.MatchMaking(context.Background(), []entity.Category{entity.SoccorCategory, entity.HistoryCategory}, params.MatchMakingRequest{})
+				if err != nil {
+					fmt.Println("error in matchmaking service in scheduler", err)
 
 					return
 				}
 
+				fmt.Println("matchmaking called successfully", res.MatchedUsers)
 			},
 		),
 	)

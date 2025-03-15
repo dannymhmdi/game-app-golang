@@ -47,6 +47,7 @@ func Load() Config {
 		panic(err)
 	}
 
+	//run GAMEAPP_auth_signKey go run main.go to set signKey env to config struct
 	k.Load(env.Provider("GAMEAPP_", ".", func(s string) string {
 		s = strings.TrimPrefix(s, "GAMEAPP_")
 		s = strings.ToLower(s)

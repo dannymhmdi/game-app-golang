@@ -5,13 +5,13 @@ services:
      image: 'bitnami/redis:7.0'
      ports:
       - "6380:6379"
-     command: redis-server --loglevel warning --protected-mode no
+     command: redis-server --loglevel warning --protected-mode no --save "" --appendonly no
      container_name: gameapp-redis
      restart: always
      environment:
       - ALLOW_EMPTY_PASSWORD=yes
-#     volumes:
-#       - gameapp-redis-data:/bitnami/redis/data
+     volumes:
+       - gameapp-redis-data:/bitnami/redis/data
     gameapp-database:
      image: mysql:8.0
      ports:
@@ -30,4 +30,4 @@ services:
 
 volumes:
   dbdata:
-#  gameapp-redis-data:
+  gameapp-redis-data:

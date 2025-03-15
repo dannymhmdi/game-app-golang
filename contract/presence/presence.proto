@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package presence;
+
+option go_package = "contract/golang/presence";  // Go package path
+message GetPresenceRequest {
+  repeated uint64 user_ids =1;
+}
+
+
+message GetPresenceResponse {
+  repeated OnlinePlayer online_players =1;
+}
+
+message OnlinePlayer {
+  uint64 user_id =1;
+  int64 timestamp=2;
+}
+
+
+service PresenceService {
+  rpc GetPresence (GetPresenceRequest) returns (GetPresenceResponse) {}
+}
+
+//run this command to generate go code in desired path

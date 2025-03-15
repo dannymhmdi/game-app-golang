@@ -13,6 +13,8 @@ db_config:
 redis_config:
   host: "localhost"
   port: 6380
+redis_presence:
+  presence_key_expiration_time: "1h"
 
 
 

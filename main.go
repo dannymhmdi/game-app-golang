@@ -4,6 +4,8 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+	"mymodule/adaptor/presence"
 	"mymodule/adaptor/redis"
 	"mymodule/config"
 	"mymodule/delivery/httpserver"
@@ -36,7 +38,13 @@ func main() {
 	//}
 	//defer logFile.Close()
 	//config.Load()
-	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, appConfig := setUp()
+	conn, dErr := grpc.Dial(":8086", grpc.WithInsecure())
+	if dErr != nil {
+		panic(dErr)
+	}
+
+	defer conn.Close()
+	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, appConfig := setUp(conn)
 
 	server := httpserver.New(appConfig, *userHandler, *backOfficeHandler, *matchMakingHandler)
 	done := make(chan bool)
@@ -66,7 +74,7 @@ func main() {
 
 }
 
-func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, config.Config) {
+func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, config.Config) {
 	appConfig := config.Load()
 
 	authSvc := authService.New(appConfig.AuthConfig)
@@ -81,10 +89,14 @@ func setUp() (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_h
 	matchMakerValidator := matchMakingValidator.New()
 	redisAdaptor := redis.New(appConfig.RedisConfig)
 	matchMakingRepo := redisMatchMaking.New(redisAdaptor)
-	matchMakingSvc := matchmakingService.New(matchMakingRepo, appConfig.MatchMakingConfig)
-	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(appConfig.AuthConfig.SigningKey), *matchMakerValidator)
 	presenceRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
 	presenceSvc := presenceService.New(presenceRepo)
+
+	presenceAdaptor := presence.New(conn)
+	matchMakingSvc := matchmakingService.New(matchMakingRepo, *presenceAdaptor, appConfig.MatchMakingConfig)
+	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(appConfig.AuthConfig.SigningKey), *matchMakerValidator)
+	//presenceRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
+	//presenceSvc := presenceService.New(presenceRepo)
 	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, []byte(appConfig.AuthConfig.SigningKey))
 	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, appConfig
 }

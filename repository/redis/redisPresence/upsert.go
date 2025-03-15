@@ -6,7 +6,7 @@ import (
 	"mymodule/pkg/richerr"
 )
 
-func (r RedisDB) UpsertUserStatus(ctx context.Context, userID uint, key string, timeStamp int64) error {
+func (r RedisDB) UpsertUserStatus(ctx context.Context, key string, timeStamp int64) error {
 
 	_, sErr := r.adaptor.Client().Set(ctx, key, timeStamp, r.config.PresenceKeyExpirationTime).Result()
 	if sErr != nil {
