@@ -23,3 +23,7 @@ service PresenceService {
 }
 
 //run this command to generate go code in desired path
+
+//    protoc --go_out=. \
+//    --go-grpc_out=.  \
+//    contract/presence/presence.proto

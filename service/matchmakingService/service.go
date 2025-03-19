@@ -3,6 +3,7 @@ package matchmakingService
 import (
 	"context"
 	"fmt"
+	"github.com/redis/go-redis/v9"
 	"mymodule/entity"
 	"mymodule/params"
 	"mymodule/pkg/richerr"
@@ -14,7 +15,7 @@ import (
 type MatchMakingRepositoryService interface {
 	Enqueue(userId uint, category entity.Category) error
 	GetCategoryWaitingList(ctx context.Context, category entity.Category) ([]entity.WaitingMember, error)
-	DeleteOfflinePlayers(ctx context.Context, players []entity.WaitingMember) error
+	DeleteOfflinePlayers(category entity.Category, players []entity.WaitingMember)
 }
 
 // we implement this interface in Presence service because we need to check Presence service database but define
@@ -23,21 +24,28 @@ type GetPresenceClient interface {
 	GetPresence(ctx context.Context, request params.GetPresenceRequest) (params.GetPresenceResponse, error)
 }
 
+type MsgPublisher interface {
+	PublishMsgToPubSub(ctx context.Context, mu entity.MatchedPlayers)
+}
+
 type Service struct {
 	repository        MatchMakingRepositoryService
 	getPresenceClient GetPresenceClient
 	config            Config
+	client            *redis.Client
+	publisher         MsgPublisher
 }
 
 type Config struct {
 	Timeout time.Time
 }
 
-func New(repo MatchMakingRepositoryService, getPresenceClient GetPresenceClient, cfg Config) *Service {
+func New(repo MatchMakingRepositoryService, getPresenceClient GetPresenceClient, publisher MsgPublisher, cfg Config) *Service {
 	return &Service{
 		repository:        repo,
 		getPresenceClient: getPresenceClient,
 		config:            cfg,
+		publisher:         publisher,
 	}
 }
 
@@ -112,20 +120,25 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 		}
 	}
 
-	s.repository.DeleteOfflinePlayers(ctx, playersToDelete)
+	go s.repository.DeleteOfflinePlayers(category, playersToDelete)
 
 	matchedUsers := make([]entity.MatchedPlayers, 0)
 
 	for i := 0; i < len(response.OnlinePlayers)-1; i = i + 2 {
+		//todo check can matching players concurrently
 
 		matchedIDs := []uint{response.OnlinePlayers[i].UserId, response.OnlinePlayers[i+1].UserId}
 
-		matchedUsers = append(matchedUsers, entity.MatchedPlayers{
+		mu := entity.MatchedPlayers{
 			UserIDs:   matchedIDs,
 			Category:  category,
 			Timestamp: timestamp.Time(),
-		})
+		}
 
+		//todo matchedUsers should be deleted
+		matchedUsers = append(matchedUsers, mu)
+
+		go s.publisher.PublishMsgToPubSub(ctx, mu)
 		//save created game for matched users ids in database & remove matched ids from zset
 	}
 

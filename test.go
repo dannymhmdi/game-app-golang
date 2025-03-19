@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	var u any
+	fmt.Println("user", u)
 	fmt.Println("time", time.Now().UnixMicro())
 	ch := make(chan int, 2)
 	ch <- 1

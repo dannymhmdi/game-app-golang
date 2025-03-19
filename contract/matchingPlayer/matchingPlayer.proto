@@ -1,0 +1,17 @@
+syntax= "proto3";
+
+package matchingPlayer;
+
+option go_package = "contract/golang/matchingPlayer";
+
+message MatchedPlayers {
+  repeated uint64 user_ids =1;
+      string category =2;
+      int64 timestamp=3;
+}
+
+//run this command to generate go code in desired path
+
+//    protoc --go_out=. \
+//    --go-grpc_out=.  \
+//    contract/matchingPlayer/matchingPlayer.proto

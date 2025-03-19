@@ -1,8 +1,14 @@
 package redis
 
 import (
+	"context"
+	"encoding/base64"
 	"fmt"
 	"github.com/redis/go-redis/v9"
+	"google.golang.org/protobuf/proto"
+	"mymodule/contract/golang/matchingPlayer"
+	"mymodule/entity"
+	"mymodule/pkg/slice"
 )
 
 type Adaptor struct {
@@ -32,4 +38,21 @@ func New(config Config) Adaptor {
 		config: config,
 	}
 
+}
+
+func (a Adaptor) PublishMsgToPubSub(ctx context.Context, mu entity.MatchedPlayers) {
+	topic := "matchMakingSvc:playerMatch"
+	protoMu := matchingPlayer.MatchedPlayers{
+		UserIds:   slice.UintToUint64Mapper(mu.UserIDs),
+		Category:  string(mu.Category),
+		Timestamp: mu.Timestamp,
+	}
+
+	payLoad, mErr := proto.Marshal(&protoMu)
+	if mErr != nil {
+		return
+	}
+
+	payloadToString := base64.StdEncoding.EncodeToString(payLoad)
+	a.client.Subscribe(ctx, topic, payloadToString)
 }

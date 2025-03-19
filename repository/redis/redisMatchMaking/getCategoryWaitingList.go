@@ -8,10 +8,8 @@ import (
 	"strconv"
 )
 
-const zsetName = "waitingList:soccer"
-
 func (r RedisDB) GetCategoryWaitingList(ctx context.Context, category entity.Category) ([]entity.WaitingMember, error) {
-
+	zsetName := fmt.Sprintf("waitingList:%s", category)
 	list, zErr := r.adaptor.Client().ZRangeWithScores(ctx, zsetName, 0, -1).Result()
 	if len(list) == 0 {
 		return nil, richerr.New().
