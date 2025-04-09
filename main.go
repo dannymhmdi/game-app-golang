@@ -93,7 +93,7 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	presenceSvc := presenceService.New(presenceRepo)
 
 	presenceAdaptor := presence.New(conn)
-	matchMakingSvc := matchmakingService.New(matchMakingRepo, *presenceAdaptor, appConfig.MatchMakingConfig)
+	matchMakingSvc := matchmakingService.New(matchMakingRepo, *presenceAdaptor, redisAdaptor, appConfig.MatchMakingConfig)
 	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(appConfig.AuthConfig.SigningKey), *matchMakerValidator)
 	//presenceRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
 	//presenceSvc := presenceService.New(presenceRepo)

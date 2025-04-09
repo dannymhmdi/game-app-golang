@@ -18,7 +18,6 @@ func main() {
 	for {
 		msg, rErr := subscriber.ReceiveMessage(context.Background())
 		if rErr != nil {
-
 			panic(rErr)
 		}
 
