@@ -1,0 +1,10 @@
+syntax= "proto3";
+
+package notification;
+
+option go_package = "contract/golang/notification";
+
+message  notification {
+  string event =1;
+  string payload =2;
+}

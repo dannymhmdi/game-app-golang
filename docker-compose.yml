@@ -1,7 +1,20 @@
 version: '3.7'
 
 services:
-    gameapp-redis:
+   gameapp-rabbitmq:
+    image: rabbitmq:latest
+    container_name: gameapp-rabbitmq
+    restart: always
+    ports:
+     - 5672:5672
+     - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: kalo
+      RABBITMQ_DEFAULT_PASS: kalo
+    volumes:
+     - rabbitmq-lib:/var/lib/rabbitmq/
+     - rabbitmq-log:/var/log/rabbitmq
+   gameapp-redis:
      image: 'bitnami/redis:7.0'
      ports:
       - "6380:6379"
@@ -12,7 +25,7 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
      volumes:
        - gameapp-redis-data:/bitnami/redis/data
-    gameapp-database:
+   gameapp-database:
      image: mysql:8.0
      ports:
       - "3308:3306"
@@ -31,3 +44,8 @@ services:
 volumes:
   dbdata:
   gameapp-redis-data:
+  rabbitmq-lib:
+  rabbitmq-log:
+
+
+

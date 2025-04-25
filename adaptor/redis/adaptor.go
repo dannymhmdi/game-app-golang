@@ -9,6 +9,7 @@ import (
 	"mymodule/contract/golang/matchingPlayer"
 	"mymodule/entity"
 	"mymodule/pkg/slice"
+	"time"
 )
 
 type Adaptor struct {
@@ -55,4 +56,11 @@ func (a Adaptor) PublishMsgToPubSub(ctx context.Context, mu entity.MatchedPlayer
 
 	payloadToString := base64.StdEncoding.EncodeToString(payLoad)
 	a.client.Subscribe(ctx, topic, payloadToString)
+}
+
+func (a Adaptor) Publish(event string, payLoad string) {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	a.client.Publish(ctx, event, payLoad)
 }

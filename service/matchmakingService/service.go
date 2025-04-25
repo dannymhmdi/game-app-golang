@@ -4,8 +4,10 @@ import (
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
+	"mymodule/contract/broker"
 	"mymodule/entity"
 	"mymodule/params"
+	"mymodule/pkg/protoEncoder"
 	"mymodule/pkg/richerr"
 	"mymodule/pkg/timestamp"
 	"sync"
@@ -34,6 +36,7 @@ type Service struct {
 	config            Config
 	client            *redis.Client
 	publisher         MsgPublisher
+	msgPublisher      broker.Publisher
 }
 
 type Config struct {
@@ -139,6 +142,8 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 		matchedUsers = append(matchedUsers, mu)
 
 		go s.publisher.PublishMsgToPubSub(ctx, mu)
+		event := "matchMakingSvc:playerMatch"
+		go s.msgPublisher.Publish(event, protoEncoder.Encoder(mu))
 		//save created game for matched users ids in database & remove matched ids from zset
 	}
 

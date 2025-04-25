@@ -27,3 +27,4 @@ service PresenceService {
 //    protoc --go_out=. \
 //    --go-grpc_out=.  \
 //    contract/presence/presence.proto
+
