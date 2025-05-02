@@ -7,6 +7,7 @@ import (
 	"github.com/knadh/koanf/providers/env"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/knadh/koanf/v2"
+	"mymodule/adaptor/rabbitmq"
 	"mymodule/adaptor/redis"
 	"mymodule/repository/mysql"
 	"mymodule/repository/redis/redisPresence"
@@ -25,6 +26,7 @@ type Config struct {
 	DbConfig          mysql.Config              `koanf:"db_config"`
 	RedisConfig       redis.Config              `koanf:"redis_config"`
 	RedisPresence     redisPresence.Config      `koanf:"redis_presence"`
+	RabbitMqConfig    rabbitmq.Config           `koanf:"rabbit_mq_config"`
 	MatchMakingConfig matchmakingService.Config `koanf:"matchmaking_config"`
 }
 

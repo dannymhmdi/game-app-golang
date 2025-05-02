@@ -3,7 +3,6 @@ package matchmakingService
 import (
 	"context"
 	"fmt"
-	"github.com/redis/go-redis/v9"
 	"mymodule/contract/broker"
 	"mymodule/entity"
 	"mymodule/params"
@@ -18,6 +17,7 @@ type MatchMakingRepositoryService interface {
 	Enqueue(userId uint, category entity.Category) error
 	GetCategoryWaitingList(ctx context.Context, category entity.Category) ([]entity.WaitingMember, error)
 	DeleteOfflinePlayers(category entity.Category, players []entity.WaitingMember)
+	//DeleteMatchedUsers()
 }
 
 // we implement this interface in Presence service because we need to check Presence service database but define
@@ -31,24 +31,25 @@ type MsgPublisher interface {
 }
 
 type Service struct {
-	repository        MatchMakingRepositoryService
-	getPresenceClient GetPresenceClient
-	config            Config
-	client            *redis.Client
-	publisher         MsgPublisher
-	msgPublisher      broker.Publisher
+	repository         MatchMakingRepositoryService
+	getPresenceClient  GetPresenceClient
+	config             Config
+	publisher          MsgPublisher
+	msgPublisher       broker.Publisher
+	msgPublisherRabbit broker.Publisher
 }
 
 type Config struct {
 	Timeout time.Time
 }
 
-func New(repo MatchMakingRepositoryService, getPresenceClient GetPresenceClient, publisher MsgPublisher, cfg Config) *Service {
+func New(repo MatchMakingRepositoryService, getPresenceClient GetPresenceClient, publisher MsgPublisher, rabbitPublisher broker.Publisher, cfg Config) *Service {
 	return &Service{
-		repository:        repo,
-		getPresenceClient: getPresenceClient,
-		config:            cfg,
-		publisher:         publisher,
+		repository:         repo,
+		getPresenceClient:  getPresenceClient,
+		config:             cfg,
+		publisher:          publisher,
+		msgPublisherRabbit: rabbitPublisher,
 	}
 }
 
@@ -66,6 +67,7 @@ func (s Service) AddToWaitingList(req params.AddToWaitingListRequest) (params.Ad
 
 func (s Service) MatchMaking(ctx context.Context, categories []entity.Category, req params.MatchMakingRequest) (params.MatchMakingResponse, error) {
 	var wg sync.WaitGroup
+
 	for _, category := range categories {
 		wg.Add(1)
 
@@ -78,6 +80,7 @@ func (s Service) MatchMaking(ctx context.Context, categories []entity.Category, 
 
 func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *sync.WaitGroup) (params.MatchMakingResponse, error) {
 	defer wg.Done()
+
 	waitingList, gErr := s.repository.GetCategoryWaitingList(ctx, category)
 	if gErr != nil {
 		fmt.Printf("%s category is empty\n", category)
@@ -97,7 +100,10 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 		UserIDs: waitingListIDs,
 	})
 
+	fmt.Printf("response= %+v\n", response)
+
 	if pErr != nil {
+		fmt.Println("kisssss", pErr)
 		return params.MatchMakingResponse{}, richerr.New().
 			SetWrappedErr(pErr).
 			SetOperation("matchMakingService.MatchMaking").
@@ -123,13 +129,15 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 		}
 	}
 
-	go s.repository.DeleteOfflinePlayers(category, playersToDelete)
+	fmt.Printf("offlinepalyers %+v\n", playersToDelete)
+	if len(playersToDelete) != 0 {
+		go s.repository.DeleteOfflinePlayers(category, playersToDelete)
+
+	}
 
 	matchedUsers := make([]entity.MatchedPlayers, 0)
 
 	for i := 0; i < len(response.OnlinePlayers)-1; i = i + 2 {
-		//todo check can matching players concurrently
-
 		matchedIDs := []uint{response.OnlinePlayers[i].UserId, response.OnlinePlayers[i+1].UserId}
 
 		mu := entity.MatchedPlayers{
@@ -141,11 +149,43 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 		//todo matchedUsers should be deleted
 		matchedUsers = append(matchedUsers, mu)
 
-		go s.publisher.PublishMsgToPubSub(ctx, mu)
+		//go s.publisher.PublishMsgToPubSub(ctx, mu)
+
 		event := "matchMakingSvc:playerMatch"
-		go s.msgPublisher.Publish(event, protoEncoder.Encoder(mu))
+		//go s.msgPublisher.Publish(event, protoEncoder.Encoder(mu))
+		go s.msgPublisherRabbit.Publish(event, protoEncoder.Encoder(mu))
+
 		//save created game for matched users ids in database & remove matched ids from zset
 	}
+
+	//this part add to debug should delete later
+
+	//matchedUsers := make([]entity.MatchedPlayers, 0)
+	//
+	//for i := 0; i < 3; i = i + 2 {
+	//	//matchedIDs := []uint{response.OnlinePlayers[i].UserId, response.OnlinePlayers[i+1].UserId}
+	//
+	//	//mu := entity.MatchedPlayers{
+	//	//	UserIDs:   matchedIDs,
+	//	//	Category:  category,
+	//	//	Timestamp: timestamp.Time(),
+	//	//}
+	//	//
+	//	////todo matchedUsers should be deleted
+	//	//matchedUsers = append(matchedUsers, mu)
+	//
+	//	testMu := entity.MatchedPlayers{
+	//		UserIDs:   []uint{200, 300},
+	//		Category:  category,
+	//		Timestamp: timestamp.Time(),
+	//	}
+	//
+	//	//go s.publisher.PublishMsgToPubSub(ctx, mu)
+	//
+	//	event := "matchMakingSvc:playerMatch"
+	//	go s.msgPublisherRabbit.Publish(event, protoEncoder.Encoder(testMu))
+	//	//save created game for matched users ids in database & remove matched ids from zset
+	//}
 
 	return params.MatchMakingResponse{MatchedUsers: matchedUsers}, nil
 }

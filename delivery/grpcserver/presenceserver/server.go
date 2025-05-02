@@ -5,10 +5,13 @@ import (
 	"fmt"
 	"google.golang.org/grpc"
 	"log"
+	"mymodule/adaptor/redis"
+	"mymodule/config"
 	"mymodule/contract/golang/presence"
 	"mymodule/params"
 	"mymodule/pkg/richerr"
 	"mymodule/pkg/slice"
+	"mymodule/repository/redis/redisPresence"
 	"mymodule/service/presenceService"
 	"net"
 )
@@ -32,10 +35,15 @@ func (s Server) Start() {
 		log.Fatalf("failed to listen: %v", lErr)
 	}
 
-	presenceSvc := Server{}
+	appConfig := config.Load()
+
+	redisAdaptor := redis.New(appConfig.RedisConfig)
+	pRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
+	p := presenceService.New(pRepo)
+	presenceSvc := New(*p)
 
 	grpcServer := grpc.NewServer()
-	presence.RegisterPresenceServiceServer(grpcServer, &presenceSvc)
+	presence.RegisterPresenceServiceServer(grpcServer, presenceSvc)
 	fmt.Printf("presence grpc server start on %s\n", address)
 	if sErr := grpcServer.Serve(listener); sErr != nil {
 		log.Fatalf("failed to serve: %v", sErr)

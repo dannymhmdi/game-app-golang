@@ -27,7 +27,7 @@ func (r RedisDB) CheckUserStatus(ctx context.Context, userIDs []uint) ([]entity.
 			continue
 		}
 
-		if int64(timeStamp) < time.Now().Add(-300*time.Second).UnixMicro() {
+		if int64(timeStamp) < time.Now().Add(-600*time.Second).UnixMicro() {
 			//r.adaptor.Client().ZRem(ctx,redisKey)
 			continue
 		}

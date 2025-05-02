@@ -2,40 +2,29 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"math"
 )
 
 func main() {
-	var u any
-	fmt.Println("user", u)
-	fmt.Println("time", time.Now().UnixMicro())
-	ch := make(chan int, 2)
-	ch <- 1
-	ch <- 2
-	close(ch)
-	s := []int{1, 2, 3, 4, 5}
-
-	for i := 1; i < len(s); i = i + 2 {
-		if i+1 <= len(s) {
-			matchedUsers := struct {
-				user1 uint
-				user2 uint
-			}{
-				user1: uint(i),
-				user2: uint(i + 1),
-			}
-
-			fmt.Printf("matchedUsers:%+v\n", matchedUsers)
-		}
-
-	}
-	// Receiving from the closed channel
-	for value := range ch {
-		fmt.Println("value", value)
-	}
-	fmt.Println("done")
+	param := []uint{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+	fmt.Printf("%+v\n", batchGenerator(2, param))
 }
 
-func Add(d time.Duration) time.Time {
-	return time.Now().Add(d)
+func batchGenerator(size int, slc []uint) [][]uint {
+	batchCount := int(math.Ceil(float64(len(slc)) / float64(size)))
+	//remain := len(slc) % size
+	ultSlc := make([][]uint, batchCount)
+
+	for i := 0; i < batchCount; i++ {
+		start := i * size
+		end := start + size
+		fmt.Println("start", start, "end", end)
+		if end > len(slc) {
+			end = len(slc)
+		}
+
+		ultSlc[i] = slc[start:end]
+	}
+
+	return ultSlc
 }

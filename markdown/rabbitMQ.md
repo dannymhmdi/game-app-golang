@@ -31,3 +31,12 @@ Consumer crashes without ack	RabbitMQ auto-requeues the message (like Nack(reque
 | msg.Nack(false, true) | Message requeued (will be redelivered).  |
 | msg.Nack(false, false)               |Message dropped or sent to DLX (no redelivery).|
 | Consumer crashes without ack               |RabbitMQ auto-requeues the message (like Nack(requeue=true)).|
+
+
+## what is message confirmation in rabbit and what is differnet between it and acknowledge message?
+ 1. Publisher Confirms (Message Confirmation)
+Purpose: Guarantee that messages have reached the broker.
+
+
+2. Consumer Acknowledgments (ACKs)
+   Purpose: Guarantee that messages have been successfully processed by consumers.

@@ -6,12 +6,14 @@ import (
 	"mymodule/pkg/richerr"
 	"mymodule/service/authService"
 	"mymodule/service/matchmakingService"
+	"mymodule/service/presenceService"
 	"mymodule/validator/matchMakingValidator"
 	"net/http"
 )
 
 type Handler struct {
 	matchMakingSvc       matchmakingService.Service
+	presenceSvc          presenceService.Service
 	authSvc              authService.Service
 	signingKey           []byte
 	matchMakingValidator matchMakingValidator.Validator
@@ -19,7 +21,8 @@ type Handler struct {
 
 func New(matchMakingSvc matchmakingService.Service, authSvc authService.Service, signingKey []byte, validator matchMakingValidator.Validator) *Handler {
 	return &Handler{
-		matchMakingSvc:       matchMakingSvc,
+		matchMakingSvc: matchMakingSvc,
+		//presenceSvc:          presenceSvc,
 		authSvc:              authSvc,
 		signingKey:           signingKey,
 		matchMakingValidator: validator,
@@ -46,5 +49,15 @@ func (h Handler) MatchMakingHandler(c echo.Context) error {
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"error": msg, "operation": op})
 	}
 
+	//presenceParams:=params.PresenseRequest{
+	//	UserId: claim.UserId,
+	//}
+	//
+	//_,pErr:=h.presenceSvc.Presence(context.Background(),presenceParams)
+	//if pErr != nil {
+	//	code , msg,op:= richerr.CheckTypeErr(pErr)
+	//	return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"error": msg,"operation": op})
+	//}
+	//
 	return c.JSON(http.StatusOK, res)
 }

@@ -11,7 +11,7 @@ const (
 	KindForbidden
 	KindNotFound
 	KindUnexpected
-	KindUnathorized
+	KindUnauthorized
 )
 
 type RichError struct {
@@ -76,7 +76,7 @@ func MapKindToHttpErr(code Kind) int {
 		return http.StatusNotFound
 	case KindUnexpected:
 		return http.StatusInternalServerError
-	case KindUnathorized:
+	case KindUnauthorized:
 		return http.StatusUnauthorized
 	default:
 		return http.StatusInternalServerError

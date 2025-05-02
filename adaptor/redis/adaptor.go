@@ -48,7 +48,6 @@ func (a Adaptor) PublishMsgToPubSub(ctx context.Context, mu entity.MatchedPlayer
 		Category:  string(mu.Category),
 		Timestamp: mu.Timestamp,
 	}
-
 	payLoad, mErr := proto.Marshal(&protoMu)
 	if mErr != nil {
 		return

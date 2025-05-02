@@ -1,9 +1,12 @@
 package main
 
 import (
+	"encoding/base64"
 	"fmt"
 	amqp "github.com/rabbitmq/amqp091-go"
+	"google.golang.org/protobuf/proto"
 	"log"
+	"mymodule/contract/golang/matchingPlayer"
 	"time"
 )
 
@@ -24,12 +27,12 @@ func main() {
 
 	// 3. Declare the same durable queue
 	q, qErr := ch.QueueDeclare(
-		"task_queue", // name
-		true,         // durable
-		false,        // delete when unused
-		false,        // exclusive
-		false,        // no-wait
-		nil,          // arguments
+		"matchedPlayers_queue", // name
+		true,                   // durable
+		false,                  // delete when unused
+		false,                  // exclusive
+		false,                  // no-wait
+		nil,                    // arguments
 	)
 
 	if qErr != nil {
@@ -45,12 +48,12 @@ func main() {
 		log.Fatalf("failed to set QoS: %v", err)
 	}
 
-	queue, iErr := ch.QueueInspect("task_queue")
+	queue, iErr := ch.QueueInspect("matchedPlayers_queue")
 	if iErr != nil {
 		log.Fatalf("Failed to inspect queue: %v", iErr)
 	}
 
-	fmt.Printf("queue data:%+v\n", queue.Messages)
+	fmt.Printf("queue data:%+v\n", queue)
 
 	// 5. Consume messages
 	msgs, cErr := ch.Consume(
@@ -71,7 +74,16 @@ func main() {
 
 	go func() {
 		for msg := range msgs {
-			log.Printf("Received: %s", msg.Body)
+			decodedPayload, dErr := base64.StdEncoding.DecodeString(string(msg.Body))
+			if dErr != nil {
+				log.Fatalf("failed to decode message: %v", dErr)
+			}
+			var matchedPlayers matchingPlayer.MatchedPlayers
+			uErr := proto.Unmarshal(decodedPayload, &matchedPlayers)
+			if uErr != nil {
+				log.Fatalf("failed to unmarshal message: %v", uErr)
+			}
+			fmt.Printf("Received:%+v\n", matchedPlayers)
 			// Simulate work
 			time.Sleep(1 * time.Second)
 			aErr := msg.Ack(false) // Manual acknowledgment
@@ -80,7 +92,8 @@ func main() {
 
 				continue
 			}
-			fmt.Printf("acked message")
+
+			fmt.Printf("message acknowledged")
 		}
 	}()
 

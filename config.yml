@@ -15,6 +15,11 @@ redis_config:
   port: 6380
 redis_presence:
   presence_key_expiration_time: "1h"
+rabbit_mq_config:
+  host: "localhost"
+  port: 5672
+  password: "kalo"
+  username: "kalo"
 
 
 

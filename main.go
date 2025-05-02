@@ -6,6 +6,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"mymodule/adaptor/presence"
+	"mymodule/adaptor/rabbitmq"
 	"mymodule/adaptor/redis"
 	"mymodule/config"
 	"mymodule/delivery/httpserver"
@@ -38,6 +39,7 @@ func main() {
 	//}
 	//defer logFile.Close()
 	//config.Load()
+
 	conn, dErr := grpc.Dial(":8086", grpc.WithInsecure())
 	if dErr != nil {
 		panic(dErr)
@@ -93,7 +95,8 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	presenceSvc := presenceService.New(presenceRepo)
 
 	presenceAdaptor := presence.New(conn)
-	matchMakingSvc := matchmakingService.New(matchMakingRepo, *presenceAdaptor, redisAdaptor, appConfig.MatchMakingConfig)
+	rabbitAdaptor := rabbitmq.New(appConfig.RabbitMqConfig)
+	matchMakingSvc := matchmakingService.New(matchMakingRepo, *presenceAdaptor, redisAdaptor, rabbitAdaptor, appConfig.MatchMakingConfig)
 	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(appConfig.AuthConfig.SigningKey), *matchMakerValidator)
 	//presenceRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
 	//presenceSvc := presenceService.New(presenceRepo)

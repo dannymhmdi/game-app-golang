@@ -30,14 +30,15 @@ func New(matchmakingSvc matchmakingService.Service) *Scheduler {
 }
 
 func (s Scheduler) Start(ch <-chan bool) {
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Minute)
-	defer cancel()
+
 	_, err := s.scheduler.NewJob(
 		gocron.DurationJob(
 			3*time.Second,
 		),
 		gocron.NewTask(
 			func() {
+				ctx, cancel := context.WithTimeout(context.Background(), 2*time.Minute)
+				defer cancel()
 				res, err := s.matchMakingSvc.MatchMaking(ctx, []entity.Category{entity.SoccorCategory, entity.HistoryCategory}, params.MatchMakingRequest{})
 				if err != nil {
 					fmt.Println("error in matchmaking service in scheduler", err)
