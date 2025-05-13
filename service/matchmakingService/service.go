@@ -6,6 +6,7 @@ import (
 	"mymodule/contract/broker"
 	"mymodule/entity"
 	"mymodule/params"
+	"mymodule/pkg/handlers"
 	"mymodule/pkg/protoEncoder"
 	"mymodule/pkg/richerr"
 	"mymodule/pkg/timestamp"
@@ -17,7 +18,7 @@ type MatchMakingRepositoryService interface {
 	Enqueue(userId uint, category entity.Category) error
 	GetCategoryWaitingList(ctx context.Context, category entity.Category) ([]entity.WaitingMember, error)
 	DeleteOfflinePlayers(category entity.Category, players []entity.WaitingMember)
-	//DeleteMatchedUsers()
+	DeleteMatchedUsers(ctx context.Context, userIds []uint, category entity.Category) error
 }
 
 // we implement this interface in Presence service because we need to check Presence service database but define
@@ -149,43 +150,19 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 		//todo matchedUsers should be deleted
 		matchedUsers = append(matchedUsers, mu)
 
-		//go s.publisher.PublishMsgToPubSub(ctx, mu)
-
 		event := "matchMakingSvc:playerMatch"
 		//go s.msgPublisher.Publish(event, protoEncoder.Encoder(mu))
-		go s.msgPublisherRabbit.Publish(event, protoEncoder.Encoder(mu))
+		//go s.msgPublisherRabbit.Publish(event, protoEncoder.Encoder(mu))
+
+		if dErr := s.repository.DeleteMatchedUsers(ctx, mu.UserIDs, category); dErr != nil {
+			fmt.Println("dErr:(matchMakingSvc.DeleteMatchedUsers)", dErr)
+			continue
+		}
+
+		go handlers.Retry(3, 500*time.Millisecond, s.msgPublisherRabbit.Publish, s.repository.Enqueue, event, protoEncoder.Encoder(mu))
 
 		//save created game for matched users ids in database & remove matched ids from zset
 	}
-
-	//this part add to debug should delete later
-
-	//matchedUsers := make([]entity.MatchedPlayers, 0)
-	//
-	//for i := 0; i < 3; i = i + 2 {
-	//	//matchedIDs := []uint{response.OnlinePlayers[i].UserId, response.OnlinePlayers[i+1].UserId}
-	//
-	//	//mu := entity.MatchedPlayers{
-	//	//	UserIDs:   matchedIDs,
-	//	//	Category:  category,
-	//	//	Timestamp: timestamp.Time(),
-	//	//}
-	//	//
-	//	////todo matchedUsers should be deleted
-	//	//matchedUsers = append(matchedUsers, mu)
-	//
-	//	testMu := entity.MatchedPlayers{
-	//		UserIDs:   []uint{200, 300},
-	//		Category:  category,
-	//		Timestamp: timestamp.Time(),
-	//	}
-	//
-	//	//go s.publisher.PublishMsgToPubSub(ctx, mu)
-	//
-	//	event := "matchMakingSvc:playerMatch"
-	//	go s.msgPublisherRabbit.Publish(event, protoEncoder.Encoder(testMu))
-	//	//save created game for matched users ids in database & remove matched ids from zset
-	//}
 
 	return params.MatchMakingResponse{MatchedUsers: matchedUsers}, nil
 }
