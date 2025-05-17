@@ -9,6 +9,7 @@ import (
 	"mymodule/config"
 	"mymodule/delivery/httpserver/backOffice_handler"
 	"mymodule/delivery/httpserver/matchMaking_handler"
+	mw "mymodule/delivery/httpserver/middleware"
 	"mymodule/delivery/httpserver/user_handler"
 	"net/http"
 )
@@ -33,7 +34,8 @@ func New(cfg config.Config, userHandler user_handler.Handler, backOfficeHandler 
 }
 
 func (s Server) Serve() {
-	s.Router.Use(middleware.Logger())
+	//s.Router.Use(middleware.Logger())
+	s.Router.Use(mw.ZapLoggerMiddleware)
 	s.Router.Use(middleware.Recover())
 	s.Router.GET("/healthcheck", s.healthCheck)
 	s.userHandler.SetRoute(s.Router)
@@ -45,24 +47,3 @@ func (s Server) Serve() {
 		fmt.Println("http server shutdown gracefully")
 	}
 }
-
-//func (s Server) Serve() *echo.Echo {
-//	e := echo.New()
-//	e.Use(middleware.Logger())
-//	e.Use(middleware.Recover())
-//	e.GET("/healthcheck", s.healthCheck)
-//	s.userHandler.SetRoute(e)
-//	s.backOfficeHandler.SetBackOfficeRoute(e)
-//	s.waitingListHandler.SetMatchMakingRoute(e)
-//	//go func() {
-//	//	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", s.config.HttpConfig.Port)))
-//	//}()
-//	go func() {
-//		if err := e.Start(fmt.Sprintf(":%s", s.config.HttpConfig.Port)); err != nil && !errors.Is(err, http.ErrServerClosed) {
-//			e.Logger.Fatal("Failed to start server:", err) // Fatal for unexpected errors
-//		} else if errors.Is(err, http.ErrServerClosed) {
-//			fmt.Println("Server shut down gracefully") // Info for graceful shutdown
-//		}
-//	}()
-//	return e
-//}

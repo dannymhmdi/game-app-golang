@@ -14,6 +14,7 @@ import (
 	"mymodule/delivery/httpserver/backOffice_handler"
 	"mymodule/delivery/httpserver/matchMaking_handler"
 	"mymodule/delivery/httpserver/user_handler"
+	"mymodule/logger"
 	"mymodule/params"
 	"mymodule/repository/mysql"
 	"mymodule/repository/mysql/mysqlAccessControl"
@@ -37,13 +38,17 @@ import (
 )
 
 func main() {
-	//logFile, sErr := logger.SetUpFile("errors.log")
-	//if sErr != nil {
-	//	log.Fatal("failed to setup logger file")
-	//}
-	//defer logFile.Close()
-	//config.Load()
+	loggerCfg := logger.Config{
+		Production: false, // or true for production
+		LogFile:    "logger/logfiles/app.log",
+		MaxSize:    1,    // MB
+		MaxBackups: 5,    // files
+		MaxAge:     30,   // days
+		Compress:   true, // compress rotated files
+	}
+	logger.Init(loggerCfg)
 
+	defer logger.Sync()
 	conn, dErr := grpc.Dial(":8086", grpc.WithInsecure())
 	if dErr != nil {
 		panic(dErr)
@@ -51,7 +56,6 @@ func main() {
 
 	defer conn.Close()
 	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, matchStoreSvc, appConfig := setUp(conn)
-
 	server := httpserver.New(appConfig, *userHandler, *backOfficeHandler, *matchMakingHandler)
 	done := make(chan bool)
 	quit := make(chan os.Signal)

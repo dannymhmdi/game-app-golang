@@ -6,8 +6,9 @@ import (
 )
 
 func main() {
-	param := []uint{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
-	fmt.Printf("%+v\n", batchGenerator(2, param))
+	//param := []uint{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+	//fmt.Printf("%+v\n", batchGenerator(2, param))
+	testing("Danial", "Shirin", "Sadra")
 }
 
 func batchGenerator(size int, slc []uint) [][]uint {
@@ -27,4 +28,8 @@ func batchGenerator(size int, slc []uint) [][]uint {
 	}
 
 	return ultSlc
+}
+
+func testing(fields ...string) {
+	fmt.Printf("fields:%+v,type:%T\n", fields, fields)
 }
