@@ -7,5 +7,6 @@ type ProfileRequest struct {
 }
 
 type ProfileResponse struct {
-	User entity.User `json:"user"`
+	RegeneratedToken string      `json:"regenerated_token"`
+	User             entity.User `json:"user"`
 }

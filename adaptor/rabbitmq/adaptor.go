@@ -36,53 +36,6 @@ func New(cfg Config) *Adaptor {
 	}
 }
 
-//main one before adding retry procedure
-
-//func (a *Adaptor) Publish(event string, payLoad string)  {
-//
-//	fmt.Println("enter match")
-//	a.mu.Lock()
-//	ch, cErr := a.rabbitClient.Channel()
-//	a.mu.Unlock()
-//	if cErr != nil {
-//		log.Fatalf("Failed to open a channel: %v", cErr)
-//	}
-//	defer func() {
-//		if cErr := ch.Close(); cErr != nil {
-//			log.Fatalf("Failed to close a channel: %v", cErr)
-//		}
-//	}()
-//
-//	q, qErr := ch.QueueDeclare(
-//		"matchedPlayers_queue", // name
-//		true,                   // durable
-//		false,                  // delete when unused
-//		false,                  // exclusive
-//		false,                  // no-wait
-//		nil,                    // arguments
-//	)
-//
-//	if qErr != nil {
-//		log.Fatalf("Failed to declare a durable queue: %v", qErr)
-//	}
-//
-//	pErr := ch.Publish(
-//		"",     // exchange (default)
-//		q.Name, // routing key (queue name)
-//		false,  // mandatory
-//		false,  // immediate
-//		amqp.Publishing{
-//			DeliveryMode: amqp.Persistent, // Make message persistent
-//			ContentType:  "text/plain",
-//			Body:         []byte(payLoad),
-//		})
-//
-//	if pErr != nil {
-//		log.Fatalf("Failed to publish a message: %v", pErr)
-//	}
-//	fmt.Printf("Published a message")
-//}
-
 func (a *Adaptor) Publish(event string, payLoad string) error {
 
 	a.mu.Lock()

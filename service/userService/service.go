@@ -1,9 +1,13 @@
 package userService
 
 import (
+	"context"
+	"mymodule/config"
 	"mymodule/entity"
 	"mymodule/params"
 	"mymodule/pkg/richerr"
+	"mymodule/pkg/types"
+	"mymodule/service/authService"
 	"mymodule/validator/uservalidator"
 )
 
@@ -16,6 +20,7 @@ type RegisterRepositoryService interface {
 type AuthGenerator interface {
 	CreateAccessToken(user entity.User) (string, error)
 	CreateRefreshToken(user entity.User) (string, error)
+	StoreToken(ctx context.Context, refreshToken string, userInfo entity.User, cfg authService.Config, userAgent string) error
 }
 
 type Service struct {
@@ -55,7 +60,7 @@ func (s Service) Register(req params.RegisterRequest) (params.RegisterResponse, 
 	return params.RegisterResponse{User: createdUser}, nil
 }
 
-func (s Service) Login(req params.LoginRequest) (params.LoginResponse, error) {
+func (s Service) Login(ctx context.Context, req params.LoginRequest) (params.LoginResponse, error) {
 
 	user, vErr := s.repository.GetUserByPhoneNumber(req.PhoneNumber)
 	if vErr != nil {
@@ -76,6 +81,12 @@ func (s Service) Login(req params.LoginRequest) (params.LoginResponse, error) {
 			SetOperation("registerService.Login").
 			SetWrappedErr(gErr).
 			SetMsg("failed to generate refresh-token")
+	}
+	appConfig := config.Load()
+	userAgent := ctx.Value(types.Key).(string)
+	sErr := s.authSvc.StoreToken(ctx, refreshToken, user, appConfig.AuthConfig, userAgent)
+	if sErr != nil {
+		return params.LoginResponse{}, sErr
 	}
 
 	return params.LoginResponse{Message: "success", Status: true, Token: params.Token{

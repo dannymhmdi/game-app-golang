@@ -39,7 +39,7 @@ func (a *Adaptor) Consume(ctx context.Context, done <-chan bool, deliveryMsg cha
 	}
 	// 4. Fair dispatch (1 message per worker)
 	err := ch.Qos(
-		1,     // prefetch count
+		10,    // prefetch count
 		0,     // prefetch size
 		false, // global
 	)

@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/confmap"
 	"github.com/knadh/koanf/providers/env"
@@ -63,6 +62,6 @@ func Load() Config {
 	if uErr != nil {
 		panic(uErr)
 	}
-	fmt.Printf("config: %+v\n", config)
+	//fmt.Printf("config: %+v\n", config)
 	return config
 }

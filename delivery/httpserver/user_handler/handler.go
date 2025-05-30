@@ -1,19 +1,25 @@
 package user_handler
 
 import (
+	"context"
+	"fmt"
 	"github.com/labstack/echo/v4"
+	"mymodule/config"
 	"mymodule/params"
 	"mymodule/pkg/richerr"
+	"mymodule/pkg/types"
 	"mymodule/service/authService"
 	"mymodule/service/presenceService"
 	"mymodule/service/userService"
 	"mymodule/validator/uservalidator"
 	"net/http"
+	"time"
 )
 
-//	type AuthGenerator interface {
-//		ParseToken(tokenString string) (*authservice.CustomClaims, error)
-//	}
+type contextKey string
+
+const Key contextKey = "userAgent"
+
 type Handler struct {
 	authSvc       authService.Service
 	userSvc       userService.Service
@@ -55,8 +61,10 @@ func (h Handler) userRegisterHandler(c echo.Context) error {
 }
 
 func (h Handler) userLoginHandler(c echo.Context) error {
-
 	bd := params.LoginRequest{}
+	parentCtx := context.WithValue(context.Background(), types.Key, c.Request().UserAgent())
+	ctx, cancel := context.WithTimeout(parentCtx, time.Second*5)
+	defer cancel()
 	if bErr := c.Bind(&bd); bErr != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, bErr.Error())
 	}
@@ -67,11 +75,30 @@ func (h Handler) userLoginHandler(c echo.Context) error {
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
 	}
 
-	loginResp, lErr := h.userSvc.Login(bd)
+	cookie, cErr := c.Request().Cookie("refresh-token")
+	if cErr != nil {
+		return echo.NewHTTPError(http.StatusInternalServerError, echo.Map{"message": cErr.Error(), "op": "user_hanler.userLoginHandler"})
+	}
+
+	fmt.Println("cookie", cookie)
+
+	loginResp, lErr := h.userSvc.Login(ctx, bd)
 	if lErr != nil {
 		code, msg, op := richerr.CheckTypeErr(lErr)
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
 	}
+
+	appConfig := config.Load()
+	c.SetCookie(&http.Cookie{
+		Name:     "refresh-token",
+		Value:    loginResp.Token.RefreshToken,
+		Expires:  time.Now().Add(appConfig.AuthConfig.RefreshTokenExpireTime),
+		HttpOnly: true,
+		Secure:   true,
+		Path:     "/",
+		SameSite: http.SameSiteStrictMode,
+	})
+
 	return c.JSON(http.StatusOK, loginResp)
 }
 
@@ -86,6 +113,13 @@ func (h Handler) userProfileHandler(c echo.Context) error {
 	if gErr != nil {
 		code, msg, op := richerr.CheckTypeErr(gErr)
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
+	}
+
+	generatedAccessToken, isOk := c.Get("generatedNewAccessToken").(string)
+
+	if isOk && generatedAccessToken != "" {
+		userInfo.RegeneratedToken = generatedAccessToken
+		return c.JSON(http.StatusOK, userInfo)
 	}
 
 	return c.JSON(http.StatusOK, userInfo)

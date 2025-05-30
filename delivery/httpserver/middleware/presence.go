@@ -14,7 +14,14 @@ import (
 func PresenceMiddleWare(authSvc authService.Service, presenceSvc presenceService.Service) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			token := c.Request().Header.Get("Authorization")
+			var token string
+			if c.Get("isAccTokenValid").(bool) {
+				token = c.Request().Header.Get("Authorization")
+			} else {
+				token = c.Get("generatedNewAccessToken").(string)
+				//fmt.Println("generatedNewAccessTokensssssss", token)
+			}
+
 			claim, pErr := authSvc.ParseToken(token)
 			if pErr != nil {
 				return echo.NewHTTPError(http.StatusUnauthorized, echo.Map{"message": pErr.Error()})

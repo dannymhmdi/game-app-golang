@@ -3154,3 +3154,899 @@
 {"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-17T10:44:12.652+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
 {"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-17T10:45:02.910+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
 {"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-17T10:46:00.088+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:20:30.429+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:20:48.878+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:21:49.319+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:22:07.982+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"39.1845ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:22:16.510+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"99.994875ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-20T10:22:50.551+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"8.001242542s","host":"localhost:8080","uri":"/healthcheck","method":"GET","status":408,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:22:53.253+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.604167ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:23:12.306+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.616041ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:12.990+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:16.026+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:16.026+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:25.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:25.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:27.876+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.3485ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724187871270,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:31.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:31.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:38.143+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.517958ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:38.848+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.671292ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724198846833,"Category":"history"}]}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-20T10:26:41.222+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"116.334µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:43.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:43.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:45.433+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.0855ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:49.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:49.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:52.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:57.005+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"12.904083ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:58.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:58.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:26:58.065+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"5.469208ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:00.042+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.275542ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:04.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:13.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:22.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:22.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:28.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:31.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:31.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:35.890+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.6115ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:40.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:40.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:43.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:43.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:49.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:49.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:27:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:13.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:13.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:31.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:43.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:43.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:28:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:10.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:10.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:25.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:25.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:31.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:31.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:29:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:04.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:19.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:25.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:34.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:34.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:30:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:04.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:04.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:16.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:16.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:19.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:19.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:34.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:55.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:55.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:31:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:16.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:52.024+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:52.024+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:32:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:04.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:04.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:07.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:07.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:16.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:19.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:25.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:28.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:28.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:37.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:37.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:43.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:43.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:53.286+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"99.563084ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:33:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:01.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:02.226+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"6.903917ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:04.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:04.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:07.749+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.28825ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:10.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:10.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":2,"Timestamp":1747724220041013,"Category":"history"},{"UserID":6,"Timestamp":1747724647748792,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:13.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:13.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:28.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:28.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:31.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:34.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:37.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:43.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:43.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:49.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:49.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:52.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:58.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:34:58.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:01.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:04.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:07.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:10.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:10.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:13.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:16.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:19.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:19.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:22.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:22.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:25.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:25.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:28.023+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:28.024+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:34.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:34.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:37.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:37.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:40.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:43.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:43.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:49.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:52.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:52.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:58.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:35:58.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:01.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:01.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:07.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:07.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:10.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:10.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:19.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:19.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:22.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:22.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:25.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:25.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:34.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:34.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:43.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:43.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:46.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:52.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:52.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:55.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:36:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:04.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:04.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:07.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:07.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:10.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:10.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:13.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:13.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:16.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:16.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:25.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:28.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:31.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:43.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:43.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:46.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:49.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:52.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:52.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:37:58.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:04.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:07.024+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:07.024+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:09.675+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"103.679917ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:10.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:10.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:13.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:13.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:16.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:19.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:22.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:25.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:25.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:25.278+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.472ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:28.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:29.210+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.012041ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:31.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:31.024+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:34.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:34.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:37.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:37.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:40.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:40.738+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"96.045417ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:43.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:43.022+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:46.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:49.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:49.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:49.791+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"4.494834ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:52.017+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:52.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:53.611+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.3055ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:55.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:55.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":[{"UserID":3,"Timestamp":1747724909208881,"Category":"history"},{"UserID":5,"Timestamp":1747724933610519,"Category":"history"}]}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:38:58.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:01.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:04.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:07.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:07.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:10.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:13.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:13.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:16.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:16.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:19.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:19.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:22.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:22.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:25.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:25.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:28.018+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:31.021+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:34.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:37.019+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T10:39:40.020+0330","C":"matchmakingService/service.go:88","M":"waitinglist","waitinglist":null}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:31:56.426+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:32:04.821+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"100.996041ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:32:12.241+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.874458ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:32:16.447+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.123709ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:32:26.434+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"96.268417ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:32:33.914+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.141916ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-20T11:32:38.836+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.292584ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T12:45:15.252+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T12:45:30.114+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T12:45:37.719+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T12:48:21.896+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T12:48:28.359+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"141.657833ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T12:58:43.519+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T12:58:50.725+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"176.625µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:00:29.608+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T13:00:30.605+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"64.25µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T13:00:31.605+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"71.875µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:01:38.751+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T13:01:41.350+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"208.958µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:03:07.261+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T13:03:09.150+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"150.375µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T13:03:09.843+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"65µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:03:41.915+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:03:45.964+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"116.748834ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:05:42.084+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:05:45.444+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"180.333µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:05:57.445+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"160µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:06:04.796+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"136µs","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:06:33.973+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:06:34.499+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"113.962708ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:23:03.528+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:23:06.073+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"115.98975ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:23:24.968+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"13.430375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:24:31.328+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:24:32.431+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"16.466041ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:24:33.359+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"8.7535ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:24:37.986+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"100.554167ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:24:45.705+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"9.237625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:26:17.881+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:26:23.849+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"104.592291ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T13:26:31.032+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"217.083µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:27:11.613+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:27:17.792+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"123.936458ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:27:26.071+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.045875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:49:50.338+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T13:49:55.673+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"18.097541ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:17:48.884+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:17:59.496+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"129.589375ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:18:09.202+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"51.417µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:21:17.713+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:21:22.158+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"38.792µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:21:46.170+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"14.858625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:22:13.958+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:22:21.276+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.689708ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:22:32.875+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"123.083µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:23:35.678+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:23:38.482+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"109.416µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:23:53.890+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"82.292µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:24:03.100+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"23.084µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:24:22.208+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-25T19:24:23.857+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"35.667µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-25T19:24:42.188+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"9.928ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T09:01:11.579+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T09:01:16.081+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"110.311583ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T11:51:27.072+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T11:51:31.884+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"118.529208ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T11:59:13.942+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T11:59:26.199+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"110.624208ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T12:01:50.141+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T12:01:54.750+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"21.541459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T12:03:41.355+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"100.981209ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T12:05:48.750+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.102125ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T13:16:59.888+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T13:17:10.989+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"135.452792ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:12:16.585+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:12:21.314+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"179.669291ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:13:24.299+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:13:28.474+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"112.225292ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:14:18.091+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:14:24.013+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"114.551ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:15:46.365+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:15:48.291+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"100.98925ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:18:13.311+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:18:15.898+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"137.666875ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:26:48.447+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T19:26:50.296+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"121.602458ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:19:59.654+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:20:04.355+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"130.315459ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:21:08.846+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:21:36.393+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"113.494958ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:22:17.011+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:22:42.311+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:22:43.360+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"105.382584ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:31:39.483+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-27T20:31:43.830+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"107.374041ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:18:37.843+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:18:52.068+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"141.046042ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:30:30.349+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:30:34.185+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"188.608833ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:31:51.801+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:31:56.030+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"178.234042ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:33:38.075+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:33:40.840+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"208.431084ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:35:25.097+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"5.90225ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:35:34.803+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.316834ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:35:38.764+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.10475ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:35:41.816+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.373792ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:35:45.084+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.407625ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:36:01.512+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"182.327209ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:36:09.129+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.9435ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:36:13.060+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.66175ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:40:31.290+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:40:48.144+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"186.014333ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:40:57.045+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.89425ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:55:36.984+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T17:55:43.258+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"185.448083ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:20:10.576+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:20:15.858+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"26.75µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:20:36.368+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"12.685375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:21:18.609+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:21:22.994+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"32.709µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:22:20.743+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:22:23.279+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"16.763667ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:22:43.786+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"43.083µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:23:21.044+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"35.875µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:23:32.588+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.236959ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:24:07.123+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"6.270542ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:36:10.874+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:36:18.353+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"35.583µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:40:24.278+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:40:24.294+0330","C":"middleware/presence.go:17","M":"check presence middleware","midddleware":"next middleware presenceMiddleWare"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:44:13.973+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:44:20.758+0330","C":"middleware/presence.go:18","M":"check presence middleware","midddleware":"next middleware presenceMiddleWare"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:44:20.759+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"579.833µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:45:16.829+0330","C":"middleware/presence.go:18","M":"check presence middleware","midddleware":"next middleware presenceMiddleWare"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:45:16.830+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"641.375µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:52:30.337+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T18:52:40.448+0330","C":"middleware/presence.go:18","M":"check presence middleware","midddleware":"next middleware presenceMiddleWare"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T18:52:40.449+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"203.875µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:00:10.824+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T19:00:13.406+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"88.792µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T19:00:38.186+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"33.584µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:02:44.491+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T19:02:48.263+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"683.334µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T19:03:03.781+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"46.542µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T19:03:16.636+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"180.458µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:03:20.336+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"184.191792ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:03:27.866+0330","C":"middleware/presence.go:19","M":"check presence middleware","midddleware":"next middleware presenceMiddleWare"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:03:27.870+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.485541ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:03:56.043+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:04:01.995+0330","C":"middleware/presence.go:19","M":"check presence middleware","midddleware":"next middleware presenceMiddleWare"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T19:04:02.006+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"10.806ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T19:04:23.231+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"34.208µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":400,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:18:13.501+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:18:15.979+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"66.333µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:18:21.344+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"21.75µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:19:20.500+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:19:25.917+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"38.75µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:19:32.424+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"22.375µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:32:07.713+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:32:11.563+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"200.71275ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:32:19.804+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.740375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:32:33.972+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"56.875µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:35:17.452+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:35:23.784+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.10975ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:35:27.640+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"56.291µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:35:35.860+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.734875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:35:39.837+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"90.458µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:35:47.909+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"92.958µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:35:49.310+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"86.166µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:35:52.385+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"35.584µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:36:04.107+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.555167ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:36:29.038+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"78.583µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:36:33.135+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.519875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:36:37.632+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"35.459µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:37:28.580+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:37:36.304+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"81.542µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:37:48.380+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"11.566959ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:37:52.143+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"85.792µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:38:00.983+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"62.875µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:38:33.838+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"33.625µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:40:33.986+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:40:42.676+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"11.232459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-28T20:40:48.730+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"27.75µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-28T20:40:55.110+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"77.625µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:08:49.721+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:09:13.810+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"224.29075ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:09:21.923+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.117916ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:09:28.760+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.29375ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:09:41.859+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"173.188167ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:09:50.088+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.431375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:09:54.734+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.033125ms","host":"localhost:8080","uri":"/game/match-making","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:39:50.742+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:39:54.622+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.515417ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:41:10.569+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:41:12.046+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"15.849792ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:41:38.582+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:41:41.258+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"67.038084ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:43:46.713+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:44:28.428+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:44:31.003+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"15.968166ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:47:06.108+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:47:13.773+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"11.523125ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T11:47:21.573+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"249.125µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:47:27.466+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"9.007917ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:47:33.509+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"61.917µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:47:46.753+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"66.042µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:48:05.780+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.016292ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T11:51:50.103+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T11:51:53.475+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"404.333µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:09:28.509+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:09:41.520+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"415.458µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:09:52.208+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"101.458µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:09:53.233+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"67.625µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:12:30.831+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:12:33.085+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"201.208µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:13:18.239+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:13:18.926+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"246.5µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:16:14.248+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:16:16.861+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"506.292µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:18:41.705+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"365.5µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:19:29.465+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"226.375µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:21:51.515+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:21:53.691+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"670.667µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:23:02.100+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"440.916µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:26:04.228+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:26:06.820+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"903.5µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:33:44.086+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:33:44.668+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"805.875µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:33:46.013+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"230.5µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:37:07.051+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:37:10.091+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"465µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:37:44.998+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[33mWARN\u001b[0m","T":"2025-05-29T12:37:47.070+0330","C":"middleware/zaplogger.go:45","M":"client error","remote_ip":"::1","latency":"490.291µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":401,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:44:00.345+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:44:02.469+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"16.006917ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:06.575+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"6.218875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:07.329+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.772833ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:08.495+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.634334ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:21.392+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.555ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:48.887+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:56.413+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"14.338292ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:45:57.196+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.130875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:50:16.711+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:51:01.265+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"21.564791ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:53:00.783+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:53:02.845+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"15.579666ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:57:43.349+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:57:45.914+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"19.167459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:58:42.799+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:58:43.728+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"14.622625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:59:01.784+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"1.862833ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:59:32.997+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:59:35.586+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"26.404625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T12:59:49.717+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.785375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:00:43.071+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:00:45.100+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"17.879625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:02:22.638+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:02:26.932+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"185.213083ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:02:34.224+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.814792ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:02:45.274+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"181.885917ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:02:52.228+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.028333ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:05.867+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"5.067875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:19.942+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.079416ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:20.641+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.417459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:21.283+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.861042ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:21.757+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"6.912042ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:22.269+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.077375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:03:22.895+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.950166ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:04:07.268+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:04:11.418+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"183.697375ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:04:19.840+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"4.013041ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:04:42.922+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:04:45.326+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"22.586542ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:06:35.799+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:06:59.124+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"186.426834ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:07:10.776+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.992291ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:07:34.684+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:07:35.603+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"185.147917ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:07:42.742+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"25.457459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:07:55.217+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"7.327584ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:11:45.909+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:11:47.837+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"27.644459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:12:38.773+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:12:41.856+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"14.144292ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:13:28.005+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:13:28.974+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"27.66225ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:13:32.307+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"14.840209ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:14:28.255+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:14:32.218+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"23.484875ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:15:35.969+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:15:36.158+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"33.981042ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:16:57.779+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:17:00.762+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"14.071542ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:18:13.767+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:18:17.864+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"16.664ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:08.195+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:18.299+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.005625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:23.992+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.881917ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:24.787+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"4.251541ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:25.734+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.554791ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:26.456+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.637125ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:27.141+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.8235ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:27.736+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.542459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:28.215+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.172334ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:19:28.752+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"4.255625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:22:16.762+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:22:18.002+0330","C":"middleware/zaplogger.go:43","M":"server error","remote_ip":"::1","latency":"298.667µs","host":"localhost:8080","uri":"/users/profile","method":"GET","status":500,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:25:54.967+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:25:58.315+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.150709ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:26:02.730+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"172.0995ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:26:11.157+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.285584ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:26:16.205+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.460583ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:26:17.051+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.366ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:27:09.204+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:27:10.875+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"13.245708ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:28:38.573+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"8.027167ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:28:39.265+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"4.56775ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:39.242+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:42.749+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"186.267125ms","host":"localhost:8080","uri":"/users/login","method":"POST","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:50.335+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.165583ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:52.495+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.660333ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:53.190+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.38ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:53.809+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.707375ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:31:54.405+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"4.040584ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:05.131+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"3.985ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:05.780+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.50125ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:06.371+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.803459ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:06.906+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.39175ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:07.335+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.559625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:19.968+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"8.162084ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}

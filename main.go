@@ -18,6 +18,7 @@ import (
 	"mymodule/params"
 	"mymodule/repository/mysql"
 	"mymodule/repository/mysql/mysqlAccessControl"
+	"mymodule/repository/mysql/mysqlAuth"
 	"mymodule/repository/mysql/mysqlMatchStore"
 	"mymodule/repository/mysql/mysqlUser"
 	"mymodule/repository/redis/redisMatchMaking"
@@ -98,8 +99,9 @@ func main() {
 func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, matchStoreService.Service, config.Config) {
 	appConfig := config.Load()
 
-	authSvc := authService.New(appConfig.AuthConfig)
 	mysqlDB := mysql.New(appConfig.DbConfig)
+	authRepo := mysqlAuth.New(*mysqlDB)
+	authSvc := authService.New(appConfig.AuthConfig, authRepo)
 	userRepo := mysqlUser.New(mysqlDB)
 	validator := uservalidator.New(userRepo)
 	userSvc := userService.New(userRepo, authSvc, *validator)
@@ -124,3 +126,7 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, []byte(appConfig.AuthConfig.SigningKey))
 	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, *matchStoreSvc, appConfig
 }
+
+//todo
+// refresh-token implementaion
+//otp process when game created to matched users

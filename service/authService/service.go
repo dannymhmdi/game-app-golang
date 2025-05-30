@@ -1,6 +1,7 @@
 package authService
 
 import (
+	"context"
 	"fmt"
 	"github.com/golang-jwt/jwt/v5"
 	"mymodule/entity"
@@ -18,6 +19,11 @@ type Config struct {
 
 type Service struct {
 	config Config
+	repo   AuthRepositoryService
+}
+
+type AuthRepositoryService interface {
+	StoreRefreshToken(ctx context.Context, refreshToken string, userInfo entity.User, cfg Config) error
 }
 
 type CustomClaims struct {
@@ -27,9 +33,10 @@ type CustomClaims struct {
 	RegisteredClaims jwt.RegisteredClaims
 }
 
-func New(cfg Config) *Service {
+func New(cfg Config, repo AuthRepositoryService) *Service {
 	return &Service{
 		config: cfg,
+		repo:   repo,
 	}
 }
 
@@ -57,10 +64,13 @@ func (s Service) CreateToken(user entity.User, expireTime time.Duration, tokenSu
 	return token.SignedString(key)
 }
 
-func (s Service) ParseToken(tokenString string) (*CustomClaims, error) { // Your secret key
+func (s Service) ParseToken(tokenString string) (*CustomClaims, error) {
+	if isRefreshToken := strings.Contains(tokenString, "refresh-token"); isRefreshToken {
+		tokenString = strings.Replace(tokenString, "refresh-token=", "", 1)
+	} else {
+		tokenString = strings.Replace(tokenString, "Bearer ", "", 1)
+	}
 
-	tokenString = strings.Replace(tokenString, "Bearer ", "", 1)
-	fmt.Println("tokenString", tokenString)
 	key := []byte(s.config.SigningKey)
 
 	token, err := jwt.ParseWithClaims(tokenString, &CustomClaims{}, func(token *jwt.Token) (interface{}, error) {
@@ -76,6 +86,16 @@ func (s Service) ParseToken(tokenString string) (*CustomClaims, error) { // Your
 		return nil, fmt.Errorf("invalid token")
 	}
 	return customClaims, nil
+}
+
+func (s Service) StoreToken(ctx context.Context, refreshToken string, userInfo entity.User, cfg Config, userAgent string) error {
+
+	sErr := s.repo.StoreRefreshToken(ctx, refreshToken, userInfo, cfg)
+	if sErr != nil {
+		return sErr
+	}
+
+	return nil
 }
 
 func (c CustomClaims) GetExpirationTime() (*jwt.NumericDate, error) {
