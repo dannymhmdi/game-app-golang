@@ -4050,3 +4050,5 @@
 {"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:06.906+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.39175ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
 {"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:07.335+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"2.559625ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
 {"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-29T13:32:19.968+0330","C":"middleware/zaplogger.go:47","M":"ok","remote_ip":"::1","latency":"8.162084ms","host":"localhost:8080","uri":"/users/profile","method":"GET","status":200,"user_agent":"PostmanRuntime/7.43.4"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-31T11:36:20.723+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}
+{"L":"\u001b[34mINFO\u001b[0m","T":"2025-05-31T19:01:17.656+0330","C":"sync/once.go:76","M":"Logger initialized in development mode"}

@@ -186,3 +186,67 @@ CMD ["python3", "/app/app.py"]
 In most cases, the **base layer** of a Docker image is indeed the **OS layer** provided by the base image (e.g., `ubuntu`, `alpine`, or a runtime-specific image like `python:3.9`). This layer includes a minimal filesystem and tools but excludes a kernel, as containers rely on the host's kernel. Any additional layers (dependencies, app code, etc.) are built on top of this base OS layer.
 
 If you have a specific context or example in mind (e.g., a particular base image or use case), let me know, and I can dive deeper!
+
+
+## Quesion: in ci cd each time we commit code it creates new docker image from our dokcer file or just build without creating a new docker image
+
+## Answer: Does Each Commit Create a New Docker Image?
+In your current setup, each time you commit and push code to the main branch (or any branch triggering the pipeline), the CI/CD pipeline creates a new Docker image from your Dockerfile. Here’s why and how this works based on your .gitlab-ci.yml:
+
+**Relevant Part of Your .gitlab-ci.yml**
+```yaml
+build_job:
+  stage: build
+  script:
+    - docker build -t dockertestapp:latest .
+  artifacts:
+    paths:
+      - dockertestapp:latest
+    expire_in: 1 week
+test_job:
+  stage: test
+  script:
+    - docker run --rm dockertestapp:latest python -m unittest discover -s tests -v
+push_job:
+  stage: build
+  script:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker tag dockertestapp:latest $DOCKER_USERNAME/dockertestapp:latest
+    - docker push $DOCKER_USERNAME/dockertestapp:latest
+  only:
+    - main
+```
+### Build Job:
+- The docker build -t dockertestapp:latest . command in the build_job creates a new Docker image tagged as dockertestapp:latest every time the pipeline runs. 
+
+
+- This happens because docker build constructs a new image based on the Dockerfile and the current state of your repository’s files (e.g., app.py, requirements.txt).
+
+
+- The image is stored in the CI runner’s Docker environment and can be used by subsequent jobs (e.g., test_job).
+
+### Test Job:
+.The docker run --rm dockertestapp:latest command uses the newly created image to run tests, confirming the image was built.
+
+### Push Job (only on main):
+- If the commit is on the main branch, the push_job tags the image as $DOCKER_USERNAME/dockertestapp:latest and pushes it to Docker Hub.
+
+
+- This results in a new image on Docker Hub, overwriting the previous latest tag (if it existed).
+
+# Key Point
+- Every Commit Triggers a New Image: Each pipeline run triggered by a commit (via git push to a branch like main or a pull request) executes the build_job, which runs docker build. This creates a new Docker image based on the current Dockerfile and codebase.
+
+
+- No Build Without Image: The docker build command inherently creates an image. There’s no scenario in your pipeline where it “just builds” without creating an image, as the build process generates an image stored locally in the CI runner’s Docker daemon.
+
+# When Does the Pipeline Run?
+- Commits to main: The build_job and test_job run for every push to any branch (as no only condition restricts them), creating a new image each time. The push_job runs only for main, pushing the image to Docker Hub.
+- Pull Requests: If you push to a branch with an open merge request to main, the pipeline runs build_job and test_job, creating a new image but not pushing it (since push_job is restricted to main).
+- Manual Triggers: If you manually trigger the pipeline in GitLab, it also creates a new image.
+
+# Does It Always Create a New Image?
+
+- Yes, a new image is created each time: The docker build -t dockertestapp:latest command generates a new image with the latest tag, overwriting any previous dockertestapp:latest image in the CI runner’s local Docker environment.
+- Layer Caching: Docker uses layer caching to speed up builds. If your Dockerfile or code hasn’t changed, Docker reuses cached layers from previous builds, making subsequent builds faster. However, a new image is still created with the updated context (e.g., changes to app.py).
+- Unique Tags: Your current pipeline always uses the latest tag, which overwrites the previous latest image. To preserve unique images per commit, you could modify the pipeline to use dynamic tags (e.g., based on commit SHA or pipeline ID; see below).
