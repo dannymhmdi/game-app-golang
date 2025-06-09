@@ -31,6 +31,7 @@ import (
 	"mymodule/service/matchmakingService"
 	"mymodule/service/presenceService"
 	"mymodule/service/userService"
+	"mymodule/validator/authValidator"
 	"mymodule/validator/matchMakingValidator"
 	"mymodule/validator/uservalidator"
 	"os"
@@ -104,6 +105,7 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	authSvc := authService.New(appConfig.AuthConfig, authRepo)
 	userRepo := mysqlUser.New(mysqlDB)
 	validator := uservalidator.New(userRepo)
+	authenticationValidator := authValidator.New(authRepo)
 	userSvc := userService.New(userRepo, authSvc, *validator)
 	authorizationRepo := mysqlAccessControl.New(mysqlDB)
 	authorizationSvc := authorizationService.New(authorizationRepo)
@@ -119,11 +121,10 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	rabbitAdaptor := rabbitmq.New(appConfig.RabbitMqConfig)
 	matchMakingSvc := matchmakingService.New(matchMakingRepo, *presenceAdaptor, redisAdaptor, rabbitAdaptor, appConfig.MatchMakingConfig)
 	waitingListHandler := matchMaking_handler.New(*matchMakingSvc, *authSvc, []byte(appConfig.AuthConfig.SigningKey), *matchMakerValidator)
-	//presenceRepo := redisPresence.New(redisAdaptor, appConfig.RedisPresence)
-	//presenceSvc := presenceService.New(presenceRepo)
+
 	matchStoreRepo := mysqlMatchStore.New(*mysqlDB)
 	matchStoreSvc := matchStoreService.New(matchStoreRepo, rabbitAdaptor)
-	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, []byte(appConfig.AuthConfig.SigningKey))
+	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, authenticationValidator, []byte(appConfig.AuthConfig.SigningKey))
 	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, *matchStoreSvc, appConfig
 }
 

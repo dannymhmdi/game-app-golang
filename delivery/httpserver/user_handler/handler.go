@@ -2,7 +2,6 @@ package user_handler
 
 import (
 	"context"
-	"fmt"
 	"github.com/labstack/echo/v4"
 	"mymodule/config"
 	"mymodule/params"
@@ -11,6 +10,7 @@ import (
 	"mymodule/service/authService"
 	"mymodule/service/presenceService"
 	"mymodule/service/userService"
+	"mymodule/validator/authValidator"
 	"mymodule/validator/uservalidator"
 	"net/http"
 	"time"
@@ -25,15 +25,17 @@ type Handler struct {
 	userSvc       userService.Service
 	presenceSvc   presenceService.Service
 	userValidator uservalidator.Validator
+	authValidator authValidator.Validator
 	authSignKey   []byte
 }
 
-func New(authSvc authService.Service, userSvc userService.Service, presenceSvc presenceService.Service, validator uservalidator.Validator, signKey []byte) *Handler {
+func New(authSvc authService.Service, userSvc userService.Service, presenceSvc presenceService.Service, validator uservalidator.Validator, authValidator authValidator.Validator, signKey []byte) *Handler {
 	return &Handler{
 		authSvc:       authSvc,
 		userSvc:       userSvc,
 		presenceSvc:   presenceSvc,
 		userValidator: validator,
+		authValidator: authValidator,
 		authSignKey:   signKey,
 	}
 }
@@ -75,12 +77,12 @@ func (h Handler) userLoginHandler(c echo.Context) error {
 		return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
 	}
 
-	cookie, cErr := c.Request().Cookie("refresh-token")
-	if cErr != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, echo.Map{"message": cErr.Error(), "op": "user_hanler.userLoginHandler"})
-	}
-
-	fmt.Println("cookie", cookie)
+	//cookie, cErr := c.Request().Cookie("refresh-token")
+	//if cErr != nil {
+	//	return echo.NewHTTPError(http.StatusInternalServerError, echo.Map{"message": cErr.Error(), "op": "user_hanler.userLoginHandler"})
+	//}
+	//
+	//fmt.Println("cookie", cookie)
 
 	loginResp, lErr := h.userSvc.Login(ctx, bd)
 	if lErr != nil {
@@ -98,7 +100,6 @@ func (h Handler) userLoginHandler(c echo.Context) error {
 		Path:     "/",
 		SameSite: http.SameSiteStrictMode,
 	})
-
 	return c.JSON(http.StatusOK, loginResp)
 }
 

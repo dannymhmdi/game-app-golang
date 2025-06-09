@@ -70,7 +70,7 @@ Base Image: Every Docker image starts with a base image (e.g., ubuntu, alpine, p
 2. Basic OS tools (e.g., bash, apt, sh).
 3. No Full Kernel: Unlike a virtual machine, a Docker image does not include a complete OS kernel. Instead, containers share the host's Linux kernel (or use a lightweight VM on Windows/macOS to emulate a Linux kernel). 
 This makes Docker images lightweight.
-Layered Architecture: Docker images are built in layers, where the base image forms the foundational layer(s). Additional layers (created by instructions in a Dockerfile, like installing packages or copying files) are stacked on top of the base image. 
+4. Layered Architecture: Docker images are built in layers, where the base image forms the foundational layer(s). Additional layers (created by instructions in a Dockerfile, like installing packages or copying files) are stacked on top of the base image. 
 The OS components from the base image are not necessarily "on top" but are part of the initial layers that subsequent application-specific layers build upon.
 
 

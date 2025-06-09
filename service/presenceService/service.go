@@ -25,17 +25,37 @@ func New(repo PresenceRepositoryService) *Service {
 }
 
 func (s Service) Presence(ctx context.Context, req params.PresenseRequest) (params.PresenseResponse, error) {
-	redisKey := fmt.Sprintf("presence:%d", req.UserId)
-	uErr := s.repository.UpsertUserStatus(ctx, redisKey, time.Now().UnixMicro())
-	if uErr != nil {
+	select {
+	case <-ctx.Done():
 		return params.PresenseResponse{}, richerr.New().
-			SetMsg(uErr.Error()).
+			SetMsg(ctx.Err().Error()).
 			SetOperation("presenceService.Presence").
-			SetWrappedErr(uErr)
-		//SetKind()
-	}
+			SetKind(richerr.KindResponseTimeout)
+	default:
+		redisKey := fmt.Sprintf("presence:%d", req.UserId)
+		uErr := s.repository.UpsertUserStatus(ctx, redisKey, time.Now().UnixMicro())
+		if uErr != nil {
+			return params.PresenseResponse{}, richerr.New().
+				SetMsg(uErr.Error()).
+				SetOperation("presenceService.Presence").
+				SetWrappedErr(uErr)
+			//SetKind()
+		}
 
-	return params.PresenseResponse{Message: "user presence upsert"}, nil
+		return params.PresenseResponse{Message: "user presence upsert"}, nil
+
+	}
+	//redisKey := fmt.Sprintf("presence:%d", req.UserId)
+	//uErr := s.repository.UpsertUserStatus(ctx, redisKey, time.Now().UnixMicro())
+	//if uErr != nil {
+	//	return params.PresenseResponse{}, richerr.New().
+	//		SetMsg(uErr.Error()).
+	//		SetOperation("presenceService.Presence").
+	//		SetWrappedErr(uErr)
+	//	//SetKind()
+	//}
+	//
+	//return params.PresenseResponse{Message: "user presence upsert"}, nil
 }
 
 func (s Service) GetPresence(ctx context.Context, req params.GetPresenceRequest) (params.GetPresenceResponse, error) {

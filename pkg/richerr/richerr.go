@@ -12,6 +12,7 @@ const (
 	KindNotFound
 	KindUnexpected
 	KindUnauthorized
+	KindResponseTimeout
 )
 
 type RichError struct {
@@ -78,6 +79,8 @@ func MapKindToHttpErr(code Kind) int {
 		return http.StatusInternalServerError
 	case KindUnauthorized:
 		return http.StatusUnauthorized
+	case KindResponseTimeout:
+		return http.StatusGatewayTimeout
 	default:
 		return http.StatusInternalServerError
 	}

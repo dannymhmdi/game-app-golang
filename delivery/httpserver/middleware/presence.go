@@ -19,18 +19,20 @@ func PresenceMiddleWare(authSvc authService.Service, presenceSvc presenceService
 				token = c.Request().Header.Get("Authorization")
 			} else {
 				token = c.Get("generatedNewAccessToken").(string)
-				//fmt.Println("generatedNewAccessTokensssssss", token)
 			}
 
 			claim, pErr := authSvc.ParseToken(token)
 			if pErr != nil {
-				return echo.NewHTTPError(http.StatusUnauthorized, echo.Map{"message": pErr.Error()})
+				return echo.NewHTTPError(http.StatusUnauthorized, echo.Map{"message": pErr.Error(), "operation": "middleware.PresenceMiddleWare"})
 			}
 			req := params.PresenseRequest{
 				UserId:    claim.UserId,
 				Timestamp: time.Now().UnixMicro(),
 			}
-			_, pErr = presenceSvc.Presence(context.Background(), req)
+
+			ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
+			defer cancel()
+			_, pErr = presenceSvc.Presence(ctx, req)
 			if pErr != nil {
 				code, msg, op := richerr.CheckTypeErr(pErr)
 				return echo.NewHTTPError(richerr.MapKindToHttpErr(code), echo.Map{"message": msg, "operation": op})
