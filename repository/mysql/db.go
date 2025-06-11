@@ -30,7 +30,6 @@ func New(cfg Config) *MysqlDB {
 		log.Fatalf("failed to connect database: %v\n", oErr)
 	}
 	fmt.Println("connected to database")
-
 	return &MysqlDB{db: db, config: cfg}
 
 }

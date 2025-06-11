@@ -11,9 +11,16 @@ func main() {
 	//testing("Danial", "Shirin", "Sadra")
 	//str := "refresh-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIsIk5hbWUiOiJEYW5pZWwiLCJSb2xlIjoyLCJSZWdpc3RlcmVkQ2xhaW1zIjp7InN1YiI6InJ0IiwiZXhwIjoxNzQ5MTA5MTgxfX0.1Q8uY0-b-PAqAZ3l-U2TQnrLaqwkCYPCU86IvOqDtlg"
 	//refershToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIsIk5hbWUiOiJEYW5pZWwiLCJSb2xlIjoyLCJSZWdpc3RlcmVkQ2xhaW1zIjp7InN1YiI6InJ0IiwiZXhwIjoxNzQ5NjY0NDIyfX0.qj_NS7j8tXislIMNlRrF3eC4S04dwFREv9uLyHwgYps"
-	hashedToken := "$2a$10$QEpoectYwcyl1nEI2QpSvu/btIljfAiW9.2r6iuXH4A9Nw5MGmp3i"
-	tokenDB := "$2a$10$6UaCfti4wq5sUmBpVUUz..UO4XNbaYMcaUCR6mUcUBvbnwG0aGHd2"
-	fmt.Println("compare", hashedToken == tokenDB)
+	//hashedToken := "$2a$10$QEpoectYwcyl1nEI2QpSvu/btIljfAiW9.2r6iuXH4A9Nw5MGmp3i"
+	//tokenDB := "$2a$10$6UaCfti4wq5sUmBpVUUz..UO4XNbaYMcaUCR6mUcUBvbnwG0aGHd2"
+	ch := make(chan int, 1)
+	num := 5
+	go func() {
+		v := <-ch
+		fmt.Println("channel value", v)
+	}()
+	ch <- num
+	fmt.Println("kir")
 }
 
 func batchGenerator(size int, slc []uint) [][]uint {

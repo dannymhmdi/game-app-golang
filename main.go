@@ -57,7 +57,8 @@ func main() {
 	}
 
 	defer conn.Close()
-	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, matchStoreSvc, appConfig := setUp(conn)
+	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, matchStoreSvc, appConfig, db := setUp(conn)
+	defer db.NewConn().Close()
 	server := httpserver.New(appConfig, *userHandler, *backOfficeHandler, *matchMakingHandler)
 	done := make(chan bool)
 	quit := make(chan os.Signal)
@@ -97,7 +98,7 @@ func main() {
 
 }
 
-func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, matchStoreService.Service, config.Config) {
+func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, matchStoreService.Service, config.Config, mysql.MysqlDB) {
 	appConfig := config.Load()
 
 	mysqlDB := mysql.New(appConfig.DbConfig)
@@ -125,7 +126,7 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	matchStoreRepo := mysqlMatchStore.New(*mysqlDB)
 	matchStoreSvc := matchStoreService.New(matchStoreRepo, rabbitAdaptor)
 	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, authenticationValidator, []byte(appConfig.AuthConfig.SigningKey))
-	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, *matchStoreSvc, appConfig
+	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, *matchStoreSvc, appConfig, *mysqlDB
 }
 
 //todo

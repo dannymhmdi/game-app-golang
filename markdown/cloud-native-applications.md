@@ -5,6 +5,9 @@ what do you do? but when you use a cloud service like AWS it has a s3 or minIO s
 you dont need to worry about file storing infrastructure this service is high available means AWS itself make backup
 of files.
 
+## AWS definition:
+Cloud native is the software approach of building, deploying, and managing modern applications in cloud computing environments. Modern companies want to build highly scalable, flexible, and resilient applications that they can update quickly to meet customer demands. To do so, they use modern tools and techniques that inherently support application development on cloud infrastructure. These cloud-native technologies support fast and frequent changes to applications without impacting service delivery, providing adopters with an innovative, competitive advantage.
+
 ### Independence:
 Each part of cloudnative applications are independent to each other ,this means also you can
 develop , deploy and maintain them individually.
