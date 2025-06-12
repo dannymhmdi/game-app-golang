@@ -9,6 +9,7 @@ import (
 	"mymodule/adaptor/presence"
 	"mymodule/adaptor/rabbitmq"
 	"mymodule/adaptor/redis"
+	"mymodule/app"
 	"mymodule/config"
 	"mymodule/delivery/httpserver"
 	"mymodule/delivery/httpserver/backOffice_handler"
@@ -57,14 +58,16 @@ func main() {
 	}
 
 	defer conn.Close()
-	userHandler, backOfficeHandler, matchMakingHandler, matchmakingSvc, matchStoreSvc, appConfig, db := setUp(conn)
-	defer db.NewConn().Close()
-	server := httpserver.New(appConfig, *userHandler, *backOfficeHandler, *matchMakingHandler)
+	app := setUp(conn)
+	defer app.RabbitAdaptor.RabbitConn().Close()
+	defer app.RabbitAdaptor.RabbitChannel().Close()
+	defer app.DB.NewConn().Close()
+	server := httpserver.New(app.Config, *app.UserHandler, *app.BackOfficeHandler, *app.MatchMakingHandler)
 	done := make(chan bool)
 	quit := make(chan os.Signal)
 	rabbitConn := make(chan *amqp.Connection, 1)
 	rabbitCh := make(chan *amqp.Channel, 1)
-	schedulerOp := scheduler.New(matchmakingSvc)
+	schedulerOp := scheduler.New(app.Services.MatchmakingService)
 	signal.Notify(quit, os.Interrupt)
 	go func() {
 		schedulerOp.Start(done)
@@ -75,7 +78,7 @@ func main() {
 	}()
 
 	go func() {
-		conn, ch := matchStoreSvc.StoreMatch(context.Background(), params.MatchStoreRequest{})
+		conn, ch := app.Services.MatchStoreService.StoreMatch(context.Background(), params.MatchStoreRequest{})
 		rabbitConn <- conn
 		rabbitCh <- ch
 	}()
@@ -98,7 +101,7 @@ func main() {
 
 }
 
-func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Handler, *matchMaking_handler.Handler, matchmakingService.Service, matchStoreService.Service, config.Config, mysql.MysqlDB) {
+func setUp(conn *grpc.ClientConn) app.App {
 	appConfig := config.Load()
 
 	mysqlDB := mysql.New(appConfig.DbConfig)
@@ -126,9 +129,18 @@ func setUp(conn *grpc.ClientConn) (*user_handler.Handler, *backOffice_handler.Ha
 	matchStoreRepo := mysqlMatchStore.New(*mysqlDB)
 	matchStoreSvc := matchStoreService.New(matchStoreRepo, rabbitAdaptor)
 	userHandler := user_handler.New(*authSvc, *userSvc, *presenceSvc, *validator, authenticationValidator, []byte(appConfig.AuthConfig.SigningKey))
-	return userHandler, backOfficeHandler, waitingListHandler, *matchMakingSvc, *matchStoreSvc, appConfig, *mysqlDB
+	return app.App{
+		UserHandler:        userHandler,
+		BackOfficeHandler:  backOfficeHandler,
+		MatchMakingHandler: waitingListHandler,
+		Services: app.Services{
+			MatchmakingService: *matchMakingSvc,
+			MatchStoreService:  *matchStoreSvc,
+		},
+		Config:        appConfig,
+		DB:            *mysqlDB,
+		RabbitAdaptor: rabbitAdaptor,
+	}
 }
 
-//todo
-// refresh-token implementaion
 //otp process when game created to matched users

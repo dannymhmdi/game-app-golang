@@ -159,7 +159,7 @@ func (s Service) MatchMaker(ctx context.Context, category entity.Category, wg *s
 			continue
 		}
 
-		go handlers.Retry(3, 500*time.Millisecond, s.msgPublisherRabbit.Publish, s.repository.Enqueue, event, protoEncoder.Encoder(mu))
+		go handlers.Retry(3, 500*time.Millisecond, s.msgPublisherRabbit.Publish, "matchedPlayers_queue", s.repository.Enqueue, event, protoEncoder.Encoder(mu))
 
 		//save created game for matched users ids in database & remove matched ids from zset
 	}

@@ -10,11 +10,11 @@ import (
 	"time"
 )
 
-func Retry(attempts int, initialDelay time.Duration, fn broker.PublisherFunc, rollBackFn func(userId uint, category entity.Category) error, event string, payload string) {
+func Retry(attempts int, initialDelay time.Duration, fn broker.PublisherFunc, queueName string, rollBackFn func(userId uint, category entity.Category) error, event string, payload string) {
 	delay := initialDelay
 	var err error
 	for i := 0; i < attempts; i++ {
-		err = fn(event, payload)
+		err = fn(event, payload, queueName)
 		if err == nil {
 
 			return

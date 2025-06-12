@@ -31,8 +31,7 @@ func New(repo MatchStoreRepositoryService, consumer broker.Consumer) *Service {
 func (m Service) StoreMatch(ctx context.Context, req params.MatchStoreRequest) (*amqp.Connection, *amqp.Channel) {
 	done := make(chan bool)
 	deliveryMsg := make(chan matchingPlayer.MatchedPlayers)
-	conn, ch := m.msgConsumer.Consume(ctx, done, deliveryMsg)
-
+	conn, ch := m.msgConsumer.Consume(ctx, "matchedPlayers_queue", done, deliveryMsg)
 	go func() {
 		for msg := range deliveryMsg {
 			game := entity.Game{
