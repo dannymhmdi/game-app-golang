@@ -59,9 +59,11 @@ func main() {
 
 	defer conn.Close()
 	app := setUp(conn)
-	defer app.RabbitAdaptor.RabbitConn().Close()
-	defer app.RabbitAdaptor.RabbitChannel().Close()
+	defer app.Adaptors.RabbitAdaptor.RabbitConn().Close()
+	defer app.Adaptors.RabbitAdaptor.RabbitChannel().Close()
 	defer app.DB.NewConn().Close()
+	redisClientClose := app.Adaptors.RedisAdaptor.CloseRedisClient()
+	defer redisClientClose()
 	server := httpserver.New(app.Config, *app.UserHandler, *app.BackOfficeHandler, *app.MatchMakingHandler)
 	done := make(chan bool)
 	quit := make(chan os.Signal)
@@ -137,9 +139,12 @@ func setUp(conn *grpc.ClientConn) app.App {
 			MatchmakingService: *matchMakingSvc,
 			MatchStoreService:  *matchStoreSvc,
 		},
-		Config:        appConfig,
-		DB:            *mysqlDB,
-		RabbitAdaptor: rabbitAdaptor,
+		Config: appConfig,
+		DB:     *mysqlDB,
+		Adaptors: app.Adaptors{
+			RabbitAdaptor: rabbitAdaptor,
+			RedisAdaptor:  &redisAdaptor,
+		},
 	}
 }
 

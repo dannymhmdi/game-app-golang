@@ -28,12 +28,17 @@ func (a Adaptor) Client() *redis.Client {
 	return a.client
 }
 
+func (a Adaptor) CloseRedisClient() func() error {
+	return a.client.Close
+}
+
 func New(config Config) Adaptor {
 	client := redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%d", config.Host, config.Port),
 		Password: "", // No password set
 		DB:       0,  // Use default DB
 	})
+
 	return Adaptor{
 		client: client,
 		config: config,

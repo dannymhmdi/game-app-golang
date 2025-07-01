@@ -126,15 +126,25 @@ func (a *Adaptor) Consume(ctx context.Context, queueName string, done <-chan boo
 			fmt.Printf("Received:%+v\n", matchedPlayers)
 			// Simulate work
 			//time.Sleep(1 * time.Second)
-			<-done
-			aErr := msg.Ack(false) // Manual acknowledgment
-			if aErr != nil {
-				fmt.Printf("failed to ack message: %v\n", aErr)
-
+			msgSucceed:=<-done
+			if msgSucceed {
+				aErr := msg.Ack(false) // Manual acknowledgment
+				if aErr != nil {
+					fmt.Printf("failed to ack message: %v\n", aErr)
+	
+					continue
+				}
+				fmt.Printf("message acknowledged")
 				continue
 			}
+			// aErr := msg.Ack(false) // Manual acknowledgment
+			// if aErr != nil {
+			// 	fmt.Printf("failed to ack message: %v\n", aErr)
 
-			fmt.Printf("message acknowledged")
+			// 	continue
+			// }
+
+			fmt.Printf("message not acknowledged")
 		}
 	}()
 

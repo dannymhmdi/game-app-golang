@@ -71,12 +71,5 @@ func (s Service) GetPresence(ctx context.Context, req params.GetPresenceRequest)
 		OnlinePlayers: onlinePlayers,
 	}, nil
 
-	//return params.GetPresenceResponse{
-	//	OnlinePlayers: []entity.OnlinePlayer{
-	//		{UserId: 1, Timestamp: 1742021804},
-	//		{UserId: 2, Timestamp: 1742021804},
-	//		{UserId: 3, Timestamp: 1742021804},
-	//	},
-	//}, nil
 
 }

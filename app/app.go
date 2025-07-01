@@ -2,6 +2,7 @@ package app
 
 import (
 	"mymodule/adaptor/rabbitmq"
+	"mymodule/adaptor/redis"
 	"mymodule/config"
 	"mymodule/delivery/httpserver/backOffice_handler"
 	"mymodule/delivery/httpserver/matchMaking_handler"
@@ -18,10 +19,17 @@ type App struct {
 	Services           Services
 	Config             config.Config
 	DB                 mysql.MysqlDB
-	RabbitAdaptor      *rabbitmq.Adaptor
+	Adaptors           Adaptors
+	//RabbitAdaptor      *rabbitmq.Adaptor
+	//RedisAdaptor       *redis.Adaptor
 }
 
 type Services struct {
 	MatchmakingService matchmakingService.Service
 	MatchStoreService  matchStoreService.Service
+}
+
+type Adaptors struct {
+	RabbitAdaptor *rabbitmq.Adaptor
+	RedisAdaptor  *redis.Adaptor
 }
