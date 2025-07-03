@@ -16,7 +16,6 @@ func (r Role) String() string {
 	default:
 		return "unknown"
 	}
-
 }
 
 func (r *Role) RoleId(role string) {
