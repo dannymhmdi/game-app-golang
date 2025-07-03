@@ -1,6 +1,6 @@
 # what is cloud native means?
 It means high access to infinite resourses.
-Imagine you have an application which user upload-download files if your hard goes fool
+Imagine you have an application which user upload-download files if your hard goes full
 what do you do? but when you use a cloud service like AWS it has a s3 or minIO service for storing file and 
 you dont need to worry about file storing infrastructure this service is high available means AWS itself make backup
 of files.

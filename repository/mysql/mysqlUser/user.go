@@ -12,6 +12,7 @@ import (
 
 func (d *DB) IsPhoneNumberUnique(phoneNumber string) (bool, error) {
 	//todo implemnet IsPhoneNumberUnique
+	d.conn.NewConn().BeginTx()
 	user := entity.User{}
 	var createdAt []uint8
 	var role string
